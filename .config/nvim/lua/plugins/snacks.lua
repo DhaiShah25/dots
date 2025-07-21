@@ -233,7 +233,7 @@ return {
 			desc = "Resume",
 		},
 		{
-			"<leader>su",
+			"<leader>u",
 			function()
 				Snacks.picker.undo()
 			end,

@@ -4,5 +4,6 @@ return {
 		vim.lsp.enable("ruff")
 		vim.lsp.enable("rust_analyzer")
 		vim.lsp.enable("ts_ls")
+		vim.lsp.enable("emmet_language_server")
 	end,
 }
