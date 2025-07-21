@@ -24,6 +24,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    libnotify
     neovim
     wget
     rustup
