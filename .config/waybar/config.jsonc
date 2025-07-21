@@ -1,0 +1,93 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 4,
+  "margin": 4,
+
+  "modules-left": ["clock", "network", "tray"],
+
+  "modules-center": [
+    "custom/notification",
+    "hyprland/workspaces",
+    "custom/power",
+  ],
+
+  "modules-right": ["backlight", "battery", "pulseaudio"],
+
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "",
+    "on-click": "activate",
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5, 6, 7],
+    },
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 6,
+    "show-passive-items": true,
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": "  {:%I:%M %p}",
+  },
+
+  "backlight": {
+    "scroll-step": 5,
+    "format": "{icon}{percent}% ",
+    "format-icons": [" 󰃞 ", " 󰃝 ", " 󰃟 ", " 󰃠 "],
+  },
+
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    "format-icons": [" ", " ", " ", " ", " "],
+  },
+
+  "network": {
+    "format-wifi": " ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "⚠",
+  },
+
+  "pulseaudio": {
+    "format": "{icon}{volume}% ",
+    "format-muted": " 󰖁 0% ",
+    "format-icons": {
+      "headphone": "   ",
+      "headset": "   ",
+      "default": ["  ", "  ", "  "],
+    },
+    "on-click": "pavucontrol",
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown",
+      "reboot": "systemctl reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate",
+    },
+  },
+
+  "custom/notification": {
+    "format": "",
+    "on-click": "swaync-client -t -sw",
+  },
+}
