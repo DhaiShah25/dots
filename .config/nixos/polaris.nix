@@ -26,7 +26,26 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    prismlauncher
+    quickemu
+    cargo-audit
+    clock-rs
+    ngrrram
+    gtypist
+    foot
+    fastfetch
+    ollama
+    ianny
+    easyeffects
+    git-extras
+    tealdeer
+    grimblast
+    cava
+    dust
+    serie
+    pass
     libnotify
+    bottom
     neovim
     wget
     rustup
@@ -69,7 +88,7 @@ in {
     tmux
     starship
     hyprlock
-    mold
+    mold-wrapped
     typescript-language-server
     emmet-language-server
     nerd-fonts.monaspace
