@@ -290,6 +290,13 @@ return {
 			end,
 			desc = "LSP Workspace Symbols",
 		},
+		{
+			"<leader>tt",
+			function()
+				Snacks.terminal.toggle()
+			end,
+			desc = "Toggle Terminal",
+		},
 	},
 	opts = {
 		bigfile = { enabled = true },
@@ -306,5 +313,11 @@ return {
 		scroll = { enabled = true },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
+		terminal = {
+			enabled = true,
+			win = {
+				position = "float",
+			},
+		},
 	},
 }
