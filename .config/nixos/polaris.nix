@@ -6,8 +6,12 @@
   ...
 }: let
   nix-minecraft = builtins.getFlake "github:Infinidoge/nix-minecraft";
+  unstable = import <nixos-unstable> {config = {allowUnfree = true;};};
 in {
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [pkgs.hplip];
+  };
 
   services.pipewire = {
     enable = true;
@@ -16,16 +20,53 @@ in {
 
   services.libinput.enable = true;
 
+  services.power-profiles-daemon.enable = true;
+
   users.users.gale = {
     isNormalUser = true;
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "networkmanager"];
     packages = with pkgs; [
       tree
     ];
     shell = pkgs.nushell;
   };
 
+  users.users.sand = {
+    isNormalUser = true;
+    extraGroups = [];
+    packages = with pkgs; [
+      tree
+    ];
+    shell = pkgs.zsh;
+  };
+
   environment.systemPackages = with pkgs; [
+    inkscape
+    tinyproxy
+    kdePackages.okular
+    papers
+    packet
+    unzip
+    darktable
+    mission-center
+    lact
+    warehouse
+    sccache
+    osu-lazer
+    blender
+    xz
+    gzip
+    watchexec
+    kdePackages.qt6ct
+    zsh
+    nh
+    hplip
+    xh
+    blockbench
+    cargo-nextest
+    libqalculate
+    bitwarden-cli
+    mcrcon
     prismlauncher
     quickemu
     cargo-audit
@@ -35,14 +76,11 @@ in {
     foot
     fastfetch
     ollama
-    ianny
     easyeffects
+    jq
     git-extras
-    tealdeer
-    grimblast
     cava
     dust
-    serie
     pass
     libnotify
     bottom
@@ -57,9 +95,8 @@ in {
     alejandra
     kitty
     wezterm
-    kdePackages.dolphin
+    nautilus
     curl
-    kondo
     swaynotificationcenter
     stow
     hyprland
@@ -70,26 +107,17 @@ in {
     chromium
     ripgrep
     fd
-    vulkan-tools
-    prettierd
     bun
     gh
     rustc
-    stylua
-    ruff
     mangohud
-    bitwarden-desktop
     chromium
-    hyprpaper
+    swww
     gitui
     obsidian
-    nushell
-    tmux
     starship
     hyprlock
     mold-wrapped
-    typescript-language-server
-    emmet-language-server
     nerd-fonts.monaspace
     bat
     dufs
@@ -100,9 +128,10 @@ in {
     hypridle
     hyprpolkitagent
     hyprsunset
-    font-awesome
     wl-clipboard
     clipse
+    bluetui
+    nushell
   ];
 
   fonts.packages = with pkgs; [
@@ -112,10 +141,17 @@ in {
 
   nixpkgs.config.allowUnfree = true;
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   programs.hyprland.enable = true;
   programs.xwayland.enable = true;
 
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = [pkgs.proton-ge-bin];
+  };
+
+  programs.zsh.enable = true;
 
   programs.gnupg.agent = {
     enable = true;
@@ -145,7 +181,7 @@ in {
     eula = true;
 
     servers.gale = {
-      enable = true;
+      enable = false;
       package = pkgs.paperServers.paper-1_21_8;
 
       serverProperties = {
@@ -153,6 +189,30 @@ in {
         difficulty = "easy";
         simulation-distance = 4;
         level-seed = "67_34shjbfabhj37";
+        enable-rcon = true;
+        "rcon.password" = "gale";
+        allow-flight = true;
+      };
+
+      jvmOpts = [
+        "-Xms1G" # Minimum RAM (adjust based on your server's resources)
+        "-Xmx2G" # Maximum RAM (adjust based on your server's resources)
+        "-XX:+UseG1GC"
+      ];
+    };
+
+    servers.new = {
+      enable = false;
+      package = pkgs.paperServers.paper-1_21_8;
+
+      serverProperties = {
+        gamemode = "survival";
+        difficulty = "easy";
+        simulation-distance = 4;
+        level-seed = "letomato3141592653";
+        enable-rcon = true;
+        "rcon.password" = "gale";
+        allow-flight = true;
       };
 
       jvmOpts = [
@@ -165,4 +225,54 @@ in {
 
   networking.firewall.allowedUDPPorts = [19132]; # Default GeyserMC Bedrock port
   networking.firewall.allowedTCPPorts = [25565];
+
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
+  services.blueman.enable = true;
+
+  programs.obs-studio = {
+    enable = true;
+
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+      obs-gstreamer
+      obs-vkcapture
+    ];
+  };
+
+  system.autoUpgrade = {
+    enable = true;
+    dates = "weekly";
+  };
+
+  nix.settings.auto-optimise-store = true;
+
+  # services.tailscale.enable = true;
+
+  services.soft-serve = {
+    enable = true;
+
+    settings = {
+      name = "Polaris Repos";
+      log_format = "text";
+      ssh = {
+        listen_addr = ":23231";
+        public_url = "ssh://polaris:23231";
+        max_timeout = 30;
+        idle_timeout = 120;
+      };
+      initial_admin_keys = ["\"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJBhLma7WBBim2qRpEThT1OZNZB2AVdncK3bPsvzN0s/ gale@polaris\""];
+    };
+  };
+
+  services.resolved = {
+    enable = true;
+    dnssec = "true";
+    domains = ["~."];
+    fallbackDns = ["1.1.1.1#one.one.one.one" "9.9.9.9#Quad9"];
+    dnsovertls = "true";
+  };
 }
