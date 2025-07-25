@@ -61,7 +61,6 @@ in {
     curl
     kondo
     swaynotificationcenter
-    steam
     stow
     hyprland
     xdg-desktop-portal-hyprland
@@ -115,6 +114,8 @@ in {
 
   programs.hyprland.enable = true;
   programs.xwayland.enable = true;
+
+  programs.steam.enable = true;
 
   programs.gnupg.agent = {
     enable = true;
