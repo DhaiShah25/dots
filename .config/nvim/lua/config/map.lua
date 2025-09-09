@@ -9,4 +9,8 @@ keymap.set("x", "<leader>p", [["_dP]])
 keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
 
+keymap.set({ "n" }, "<leader>gr", function()
+	vim.lsp.buf.rename()
+end)
+
 keymap.set({ "n", "v" }, "<leader>d", '"_d')
