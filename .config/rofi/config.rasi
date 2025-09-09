@@ -24,29 +24,29 @@ configuration {
 @import                          "fonts.rasi"
 
 * {
-    border-colour:               var(selected);
-    handle-colour:               var(selected);
-    background-colour:           var(background);
-    foreground-colour:           var(foreground);
-    alternate-background:        var(background-alt);
-    normal-background:           var(background);
-    normal-foreground:           var(foreground);
-    urgent-background:           var(urgent);
-    urgent-foreground:           var(background);
-    active-background:           var(active);
-    active-foreground:           var(background);
-    selected-normal-background:  var(selected);
-    selected-normal-foreground:  var(background);
-    selected-urgent-background:  var(active);
-    selected-urgent-foreground:  var(background);
-    selected-active-background:  var(urgent);
-    selected-active-foreground:  var(background);
-    alternate-normal-background: var(background);
-    alternate-normal-foreground: var(foreground);
-    alternate-urgent-background: var(urgent);
-    alternate-urgent-foreground: var(background);
-    alternate-active-background: var(active);
-    alternate-active-foreground: var(background);
+border-colour: var(outline);
+handle-colour: var(surface);
+background-colour: var(surface-bright);
+foreground-colour: var(primary);
+alternate-background: var(surface-container-low);
+normal-background: var(surface-container);
+normal-foreground: var(on-surface);
+urgent-background: var(error);
+urgent-foreground: var(tertiary);
+active-background: var(primary-container);
+active-foreground: var(on-primary-container);
+selected-normal-background: var(secondary-container);
+selected-normal-foreground: var(on-secondary-container);
+selected-urgent-background: var(error);
+selected-urgent-foreground: var(on-error);
+selected-active-background: var(error);
+selected-active-foreground: var(on-error);
+alternate-normal-background: var(surface-dim);
+alternate-normal-foreground: var(on-surface-variant);
+alternate-urgent-background: var(error);
+alternate-urgent-foreground: var(on-error-container);
+alternate-active-background: var(primary-container);
+alternate-active-foreground: var(on-primary-container);
 }
 
 /*****----- Main Window -----*****/

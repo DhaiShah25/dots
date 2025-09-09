@@ -5,7 +5,7 @@
   "spacing": 4,
   "margin": 4,
 
-  "modules-left": ["clock", "network", "tray"],
+  "modules-left": ["clock", "power-profiles-daemon", "network", "tray"],
 
   "modules-center": [
     "custom/notification",
@@ -33,7 +33,19 @@
 
   "clock": {
     "interval": 1,
-    "format": "  {:%I:%M %p}",
+    "format": "{:%I:%M %p - %a %d}",
+    "tooltip-format": "{:%a}",
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}",
+    "tooltip": true,
+    "format-icons": {
+      "performance": "",
+      "balanced": " ",
+      "power-saver": " ",
+    },
   },
 
   "backlight": {
@@ -49,14 +61,14 @@
       "critical": 15,
     },
     "format": "{icon}",
-    "format-full": "{capacity}% {icon}",
+    "format-full": " {icon} {capacity}%",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
-    "format-icons": [" ", " ", " ", " ", " "],
+    "format-icons": ["", "", "", "", ""],
   },
 
   "network": {
-    "format-wifi": " ",
+    "format-wifi": "",
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "⚠",
@@ -66,8 +78,8 @@
     "format": "{icon}{volume}% ",
     "format-muted": " 󰖁 0% ",
     "format-icons": {
-      "headphone": "   ",
-      "headset": "   ",
+      "headphone": "  ",
+      "headset": "  ",
       "default": ["  ", "  ", "  "],
     },
     "on-click": "pavucontrol",

@@ -1,20 +1,20 @@
--- ~.config/wezterm/sessionizer.lua
 local wezterm = require("wezterm")
 local act = wezterm.action
 
 local M = {}
 
-local fd = "/nix/store/fllasdmcpm1a21frqbr06in8536wnlvf-system-path/bin/fd"
+local fd = "/usr/bin/env"
 
 M.toggle = function(window, pane)
 	local projects = {}
 
 	local success, stdout, stderr = wezterm.run_child_process({
-		fd,
-		"-HI",
-		"^.git$",
-		"--max-depth=4",
-		"--prune",
+		"/usr/bin/env",
+		"fd",
+		".",
+		"--max-depth=1",
+		"--type=d",
+		os.getenv("HOME") .. "/dev",
 		os.getenv("HOME"),
 	})
 
@@ -24,7 +24,7 @@ M.toggle = function(window, pane)
 	end
 
 	for line in stdout:gmatch("([^\n]*)\n?") do
-		local project = line:gsub("/.git.*$", "")
+		local project = line:gsub("/$", "")
 		local label = project
 		local id = project:gsub(".*/", "")
 		table.insert(projects, { label = tostring(label), id = tostring(id) })
@@ -37,11 +37,14 @@ M.toggle = function(window, pane)
 					wezterm.log_info("Cancelled")
 				else
 					wezterm.log_info("Selected " .. label)
-					win:perform_action(act.SwitchToWorkspace({ name = id, spawn = { cwd = label } }), pane)
+					win:perform_action(
+						act.SwitchToWorkspace({ name = id, spawn = { args = { "nu" }, cwd = label } }),
+						pane
+					)
 				end
 			end),
 			fuzzy = true,
-			title = "Select project",
+			title = "Select Project",
 			choices = projects,
 		}),
 		pane
