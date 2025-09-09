@@ -26,6 +26,7 @@ in {
     extraGroups = ["wheel" "networkmanager"];
     packages = with pkgs; [
       tree
+      unstable.opencode
     ];
     shell = pkgs.nushell;
   };
@@ -113,7 +114,7 @@ in {
     chromium
     swww
     gitui
-    obsidian
+    unstable.obsidian
     starship
     hyprlock
     mold-wrapped
