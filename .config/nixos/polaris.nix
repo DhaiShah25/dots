@@ -5,7 +5,6 @@
   modulesPath,
   ...
 }: let
-  nix-minecraft = builtins.getFlake "github:Infinidoge/nix-minecraft";
   unstable = import <nixos-unstable> {config = {allowUnfree = true;};};
 in {
   services.printing = {
@@ -163,7 +162,7 @@ in {
 
   services.flatpak.enable = true;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = ["nix-command"];
 
   xdg.mime.defaultApplications = {
     "text/html" = "app.zen_browser.zen.desktop";
@@ -172,59 +171,6 @@ in {
     "x-scheme-handler/about" = "app.zen_browser.zen.desktop";
     "x-scheme-handler/unknown" = "app.zen_browser.zen.desktop";
   };
-
-  imports = [nix-minecraft.nixosModules.minecraft-servers];
-  nixpkgs.overlays = [nix-minecraft.overlay];
-
-  services.minecraft-servers = {
-    enable = true;
-    eula = true;
-
-    servers.gale = {
-      enable = false;
-      package = pkgs.paperServers.paper-1_21_8;
-
-      serverProperties = {
-        gamemode = "survival";
-        difficulty = "easy";
-        simulation-distance = 4;
-        level-seed = "67_34shjbfabhj37";
-        enable-rcon = true;
-        "rcon.password" = "gale";
-        allow-flight = true;
-      };
-
-      jvmOpts = [
-        "-Xms1G" # Minimum RAM (adjust based on your server's resources)
-        "-Xmx2G" # Maximum RAM (adjust based on your server's resources)
-        "-XX:+UseG1GC"
-      ];
-    };
-
-    servers.new = {
-      enable = false;
-      package = pkgs.paperServers.paper-1_21_8;
-
-      serverProperties = {
-        gamemode = "survival";
-        difficulty = "easy";
-        simulation-distance = 4;
-        level-seed = "letomato3141592653";
-        enable-rcon = true;
-        "rcon.password" = "gale";
-        allow-flight = true;
-      };
-
-      jvmOpts = [
-        "-Xms1G" # Minimum RAM (adjust based on your server's resources)
-        "-Xmx2G" # Maximum RAM (adjust based on your server's resources)
-        "-XX:+UseG1GC"
-      ];
-    };
-  };
-
-  networking.firewall.allowedUDPPorts = [19132]; # Default GeyserMC Bedrock port
-  networking.firewall.allowedTCPPorts = [25565];
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
