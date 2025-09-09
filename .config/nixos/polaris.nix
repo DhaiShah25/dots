@@ -41,6 +41,7 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    impala
     inkscape
     tinyproxy
     kdePackages.okular
@@ -222,4 +223,19 @@ in {
     fallbackDns = ["1.1.1.1#one.one.one.one" "9.9.9.9#Quad9"];
     dnsovertls = "true";
   };
+
+  networking.networkmanager.enable = true;
+  networking.wireless.iwd.enable = true;
+
+  networking.wireless.iwd.settings = {
+    IPv6 = {
+      Enabled = true;
+    };
+    Settings = {
+      AutoConnect = true;
+    };
+  };
+
+  networking.networkmanager.wifi.backend = "iwd";
+  networking.networkmanager.dns = "systemd-resolved";
 }
