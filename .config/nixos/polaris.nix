@@ -41,6 +41,7 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    niv
     impala
     inkscape
     tinyproxy
