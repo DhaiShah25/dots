@@ -220,7 +220,7 @@ in {
     enable = true;
     dnssec = "true";
     domains = ["~."];
-    fallbackDns = ["1.1.1.1#one.one.one.one" "9.9.9.9#Quad9"];
+    fallbackDns = ["9.9.9.9" "149.112.112.112"];
     dnsovertls = "true";
   };
 
@@ -235,6 +235,8 @@ in {
       AutoConnect = true;
     };
   };
+
+  networking.nameservers = ["9.9.9.9" "149.112.112.112"];
 
   networking.networkmanager.wifi.backend = "iwd";
   networking.networkmanager.dns = "systemd-resolved";
