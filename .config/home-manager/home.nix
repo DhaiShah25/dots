@@ -37,8 +37,6 @@
     matugen
     ffmpeg
     xorg.xprop
-    adwaita-icon-theme
-    adwaita-fonts
     pnpm
     nodejs
     taplo
@@ -51,6 +49,7 @@
     stylua
     prettierd
     presenterm
+    resvg
   ];
 
   home.file = {
@@ -90,6 +89,22 @@
     "nv" = "nvim";
   };
 
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Nordic";
+      package = pkgs.nordic;
+    };
+    iconTheme = {
+      name = "Nordzy";
+      package = pkgs.nordzy-icon-theme;
+    };
+  };
+
+  qt = {
+    enable = true;
+  };
+
   programs = {
     direnv = {
       enable = true;
@@ -127,16 +142,8 @@
     nushell = {
       enable = true;
       extraConfig = ''
-        let carapace_completer = {|spans|
-            carapace $spans.0 nushell ...$spans | from json
-        }
         $env.config.show_banner = false
         $env.config.edit_mode = "vi"
-        $env.config.completions.external = {
-             enable: true
-             max_results: 100
-             completer: $carapace_completer
-        }
 
         $env.PATH = ($env.PATH |
         split row (char esep) |
@@ -150,15 +157,17 @@
           isolation: true
         }
 
-        mkdir ($nu.data-dir | path join "vendor/autoload")
-        starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
-
         $env.PATH ++= ['~/.local/bin']
         $env.EDITOR = "nvim";
       '';
     };
 
     carapace = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
+
+    starship = {
       enable = true;
       enableNushellIntegration = true;
     };
