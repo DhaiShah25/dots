@@ -24,7 +24,7 @@
     ./users.nix
   ];
 
-  nix.settings.experimental-features = ["nix-command"];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   xdg.mime.defaultApplications = {
     "text/html" = "app.zen_browser.zen.desktop";

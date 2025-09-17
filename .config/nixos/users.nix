@@ -72,7 +72,6 @@
         syntaxHighlighting.enable = true;
 
         initContent = ''
-          eval "$(starship init zsh)"
           export PATH="/home/gale/.bun/bin:$PATH"
         '';
       };
@@ -96,6 +95,23 @@
 
           $env.PATH ++= ['~/.local/bin']
           $env.EDITOR = "nvim";
+
+          let carapace_completer = {|spans|
+              let expanded_alias = (scope aliases | where name == $spans.0 | get -i 0 | get -i expansion)
+              let spans = (if $expanded_alias != null {
+                $spans | skip 1 | prepend ($expanded_alias | split row " " | take 1)
+              } else {
+                $spans | skip 1 | prepend ($spans.0)
+              })
+              carapace $spans.0 nushell ...$spans | from json
+          }
+
+          $env.config.completions = {
+              external: {
+                enable: true
+                completer: $carapace_completer
+              }
+          }
         '';
       };
 
