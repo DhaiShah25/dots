@@ -105,7 +105,6 @@ in {
     zoxide
     oterm
     wlsunset
-    chezmoi
     gen-license
     butler
     renderdoc
