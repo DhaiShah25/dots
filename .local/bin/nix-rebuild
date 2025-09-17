@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+set -e
+
+nvim ~/.config/nixos/
+
+pushd ~/.config/nixos/
+
+if git diff --quiet '*.nix'; then
+    echo "No changes detected, exiting."
+    popd
+    exit 0
+fi
+
+alejandra . &>/dev/null \
+  || ( alejandra . ; echo "formatting failed!" && exit 1)
+
+git diff -U0 '*.nix'
+
+echo "NixOS Rebuilding..."
+
+sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+
+current=$(nixos-rebuild list-generations | grep current)
+
+git add '*.nix'
+
+popd
+
+notify-send -e "NixOS Rebuilt OK!" --icon=system-software-update
