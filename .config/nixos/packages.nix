@@ -10,15 +10,14 @@ in {
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    tinty
     impala
-    bubblewrap
     inkscape
     tinyproxy
     kdePackages.okular
     papers
     packet
     unzip
-    darktable
     mission-center
     lact
     warehouse
@@ -74,7 +73,6 @@ in {
     fd
     bun
     gh
-    rustc
     mangohud
     swww
     gitui
@@ -95,15 +93,12 @@ in {
     clipse
     bluetui
     nushell
-    icecream
-    npins
     mitmproxy
     jujutsu
     typst
     pandoc
     oha
     zoxide
-    oterm
     wlsunset
     gen-license
     butler

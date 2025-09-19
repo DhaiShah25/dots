@@ -10,7 +10,7 @@
   time.timeZone = "America/New_York";
 
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [22000 8080 3000 5000 23231];
+  networking.firewall.allowedTCPPorts = [22000 8080 3000 5000 23231 8888];
   networking.firewall.allowedUDPPorts = [22000];
 
   services.resolved = {
