@@ -10,6 +10,7 @@ in {
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    gitoxide
     tinty
     impala
     inkscape
@@ -39,7 +40,7 @@ in {
     ngrrram
     foot
     fastfetch
-    ollama
+    unstable.ollama
     easyeffects
     jq
     git-extras

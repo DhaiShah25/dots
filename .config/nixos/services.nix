@@ -21,7 +21,7 @@
 
   services.blueman.enable = true;
 
-  # services.tailscale.enable = true;
+  services.tailscale.enable = true;
 
   services.soft-serve = {
     enable = true;
