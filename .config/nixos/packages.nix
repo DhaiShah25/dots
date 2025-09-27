@@ -10,6 +10,8 @@ in {
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    skim
+    osu-lazer
     gitoxide
     tinty
     impala
