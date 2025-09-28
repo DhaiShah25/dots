@@ -126,6 +126,11 @@
         enableNushellIntegration = true;
         enableZshIntegration = true;
       };
+
+      skim = {
+        enable = true;
+        enableZshIntegration = true;
+      };
     };
   };
 }

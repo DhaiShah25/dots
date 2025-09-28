@@ -6,123 +6,19 @@
   ...
 }: let
   unstable = import <nixos-unstable> {config = {allowUnfree = true;};};
+
+  cliPackages = import ./packages/cli.nix {inherit pkgs unstable;};
+  desktopPackages = import ./packages/desktop.nix {inherit pkgs unstable;};
+  devPackages = import ./packages/dev.nix {inherit pkgs unstable;};
+  funPackages = import ./packages/fun.nix {inherit pkgs unstable;};
+  miscPackages = import ./packages/misc.nix {inherit pkgs unstable;};
+  utilsPackages = import ./packages/utils.nix {inherit pkgs unstable;};
+
+  myPackages = cliPackages ++ desktopPackages ++ devPackages ++ funPackages ++ miscPackages ++ utilsPackages;
 in {
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    skim
-    osu-lazer
-    gitoxide
-    tinty
-    impala
-    inkscape
-    tinyproxy
-    kdePackages.okular
-    papers
-    packet
-    unzip
-    mission-center
-    lact
-    warehouse
-    sccache
-    blender
-    xz
-    gzip
-    watchexec
-    zsh
-    xh
-    blockbench
-    cargo-nextest
-    libqalculate
-    bitwarden-cli
-    mcrcon
-    prismlauncher
-    quickemu
-    cargo-audit
-    ngrrram
-    foot
-    fastfetch
-    unstable.ollama
-    easyeffects
-    jq
-    git-extras
-    cava
-    dust
-    pass
-    libnotify
-    bottom
-    neovim
-    wget
-    rustup
-    rofi-wayland
-    waybar
-    flatpak
-    clang
-    git
-    alejandra
-    kitty
-    wezterm
-    nautilus
-    curl
-    swaynotificationcenter
-    stow
-    hyprland
-    xdg-desktop-portal-hyprland
-    polkit
-    dconf
-    legcord
-    chromium
-    ripgrep
-    fd
-    bun
-    gh
-    mangohud
-    swww
-    gitui
-    unstable.obsidian
-    starship
-    hyprlock
-    mold-wrapped
-    nerd-fonts.monaspace
-    bat
-    dufs
-    yazi
-    delta
-    tokei
-    hyprpicker
-    hypridle
-    hyprpolkitagent
-    wl-clipboard
-    clipse
-    bluetui
-    nushell
-    mitmproxy
-    jujutsu
-    typst
-    pandoc
-    oha
-    zoxide
-    wlsunset
-    gen-license
-    butler
-    renderdoc
-    matugen
-    ffmpeg
-    xorg.xprop
-    pnpm
-    nodejs
-    taplo
-    grimblast
-    tealdeer
-    kondo
-    typescript-language-server
-    emmet-language-server
-    ruff
-    stylua
-    prettierd
-    presenterm
-    resvg
-  ];
+  environment.systemPackages = myPackages;
 
   programs.hyprland.enable = true;
   programs.xwayland.enable = true;
