@@ -127,7 +127,7 @@
         enableZshIntegration = true;
       };
 
-      skim = {
+      fzf = {
         enable = true;
         enableZshIntegration = true;
       };

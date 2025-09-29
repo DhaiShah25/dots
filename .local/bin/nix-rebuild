@@ -2,9 +2,9 @@
 
 set -e
 
-nvim ~/.config/nixos/
-
 pushd ~/.config/nixos/
+
+nvim $(fd -e nix | fzf)
 
 if git diff --quiet '*.nix'; then
     echo "No changes detected, exiting."

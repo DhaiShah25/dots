@@ -15,9 +15,11 @@ with pkgs; [
   typst
   pandoc
   kondo
-  skim
+  fzf
   tinty
   delta
+
+  ffmpeg
 
   tinyproxy
   warehouse
