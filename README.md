@@ -9,6 +9,8 @@ The desktop consists of the following:
 - rofi-wayland
 - hyprpaper
 - hyprlock
+- nixos
+- etc.
 
 ## Install
 
@@ -36,7 +38,7 @@ Add the import
 
 ### ~/dots/.config/nixos/users.nix
 
-Change everywhere it says gale to instead say your user's name
+**Change everywhere it says gale to instead say your user's name**
 
 ---
 
