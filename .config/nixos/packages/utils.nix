@@ -18,6 +18,7 @@ with pkgs; [
   fzf
   tinty
   delta
+  playerctl
 
   ffmpeg
 

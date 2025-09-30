@@ -20,6 +20,9 @@ with pkgs; [
   dconf
   swww
 
+  mpv
+  mpvScripts.mpris
+
   librewolf
   chromium
   easyeffects
