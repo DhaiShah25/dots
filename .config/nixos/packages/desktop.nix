@@ -13,7 +13,6 @@ with pkgs; [
   rofi-wayland
   wezterm
   nautilus
-  chromium
   wlsunset
   flatpak
   foot
@@ -21,6 +20,8 @@ with pkgs; [
   dconf
   swww
 
+  librewolf
+  chromium
   easyeffects
   kdePackages.okular
   mission-center
