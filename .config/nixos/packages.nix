@@ -20,8 +20,15 @@ in {
 
   environment.systemPackages = myPackages;
 
-  programs.hyprland.enable = true;
+  programs.uwsm.enable = true;
+
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
   programs.xwayland.enable = true;
+
+  programs.waybar.enable = true;
 
   programs.steam = {
     enable = true;

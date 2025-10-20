@@ -10,6 +10,18 @@
     pulse.enable = true;
   };
 
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember-session --time --theme text=white;time=lightmagenta;container=darkgray;border=lightmagenta;title=lightmagenta;greet=lightmagenta;prompt=lightcyan;input=lightyellow;action=lightmagenta;button=lightblue";
+        user = "greeter";
+      };
+    };
+  };
+
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   services.libinput.enable = true;
 
   services.power-profiles-daemon.enable = true;

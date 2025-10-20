@@ -19,4 +19,7 @@ with pkgs; [
   dufs
   tealdeer
   nvd
+
+  niv
+  npins
 ]

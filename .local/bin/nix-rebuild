@@ -27,4 +27,4 @@ git add '*.nix'
 
 popd
 
-notify-send -e "NixOS Rebuilt OK!" --icon=system-software-update
+notify-send -e "NixOS Rebuilt OK!" --icon=software-updater-symbolic

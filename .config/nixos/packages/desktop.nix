@@ -3,13 +3,14 @@
   unstable,
 }:
 with pkgs; [
+  niri
+
   hyprland
   hyprlock
   hypridle
   hyprpicker
   hyprpolkitagent
   xdg-desktop-portal-hyprland
-  waybar
   rofi-wayland
   wezterm
   nautilus
