@@ -1,0 +1,18 @@
+{
+  "New Error": {
+    "prefix": "nerror",
+    "description": "Create a new error struct implementing Error",
+    "body": [
+      "#[derive(Debug)]",
+      "struct ${1:StructName};",
+      "",
+      "impl Display for ${1:StructName} {",
+      "\tfn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {",
+      "\t\twrite!(f, \"${2:display}\", ${3:args})",
+      "\t}",
+      "}",
+      "",
+      "impl std::error::Error for ${1:StructName};"
+    ]
+  }
+}

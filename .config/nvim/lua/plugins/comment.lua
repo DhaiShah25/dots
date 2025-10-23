@@ -1,4 +1,4 @@
 return {
-	"echasnovski/mini.comment",
+	"nvim-mini/mini.comment",
 	version = "*",
 }
