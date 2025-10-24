@@ -9,6 +9,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
@@ -34,15 +35,8 @@
     "x-scheme-handler/unknown" = "app.zen_browser.zen.desktop";
   };
 
-  system.autoUpgrade = {
-    enable = true;
-    dates = "weekly";
-  };
-
   system.activationScripts.report-changes = ''
     PATH=$PATH:${lib.makeBinPath [pkgs.nvd pkgs.nix]}
     nvd diff $(ls -dv /nix/var/nix/profiles/system-*-link | tail -2)
   '';
-
-  nix.settings.auto-optimise-store = true;
 }

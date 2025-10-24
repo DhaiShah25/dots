@@ -1,4 +1,7 @@
-{pkgs, ...}:
+{
+  pkgs,
+  unstable,
+}:
 with pkgs; [
   git
   git-extras
@@ -15,10 +18,18 @@ with pkgs; [
   clang
 
   nodejs
-  bun
-  pnpm
+  unstable.bun
+  unstable.pnpm
 
   gen-license
+
+  turso-cli
+
+  quickemu
+
+  unstable.deno
+
+  unstable.nodePackages_latest.vercel
 
   # Language Servers & Formatters
   ruff

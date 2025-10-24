@@ -31,8 +31,6 @@
 
   services.flatpak.enable = true;
 
-  services.blueman.enable = true;
-
   services.tailscale.enable = true;
 
   services.soft-serve = {
@@ -50,4 +48,8 @@
       initial_admin_keys = ["\"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJBhLma7WBBim2qRpEThT1OZNZB2AVdncK3bPsvzN0s/ gale@polaris\""];
     };
   };
+
+  services.fwupd.enable = true;
+
+  services.blueman.enable = true;
 }

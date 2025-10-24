@@ -18,13 +18,13 @@ with pkgs; [
   flatpak
   foot
   polkit
-  dconf
   swww
+
+  walker
 
   mpv
   mpvScripts.mpris
 
-  librewolf
   chromium
   easyeffects
   kdePackages.okular
@@ -34,11 +34,16 @@ with pkgs; [
   papers
   packet
 
+  warehouse
+
   unstable.obsidian
 
+  unstable.audacity
   inkscape
   blender
   blockbench
 
   impala
+
+  signal-desktop
 ]
