@@ -13,20 +13,23 @@ with pkgs; [
   grimblast
   tokei
   typst
-  pandoc
   kondo
   fzf
-  tinty
   delta
   playerctl
+
+  serie
 
   ffmpeg
 
   tinyproxy
-  warehouse
-  bluetui
-  mitmproxy
 
   libqalculate
   starship
+
+  icon-library
+
+  nix-tree
+
+  ripgrep-all
 ]

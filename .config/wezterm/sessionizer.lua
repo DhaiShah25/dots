@@ -14,8 +14,9 @@ M.toggle = function(window, pane)
 		".",
 		"--max-depth=1",
 		"--type=d",
-		os.getenv("HOME") .. "/dev",
-		os.getenv("HOME"),
+		"--base-directory=" .. os.getenv("HOME"),
+		"dev",
+		".",
 	})
 
 	if not success then
