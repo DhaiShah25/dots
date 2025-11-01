@@ -1,7 +1,8 @@
 {
   pkgs,
   lib,
-  inputs,
+  config,
+  ...
 }: {
   services.pipewire = {
     enable = true;
@@ -12,7 +13,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember-session --time --theme text=white;time=lightmagenta;container=darkgray;border=lightmagenta;title=lightmagenta;greet=lightmagenta;prompt=lightcyan;input=lightyellow;action=lightmagenta;button=lightblue";
+        command = "${pkgs.tuigreet}/bin/tuigreet --remember-session --time --theme text=white;time=lightmagenta;container=darkgray;border=lightmagenta;title=lightmagenta;greet=lightmagenta;prompt=lightcyan;input=lightyellow;action=lightmagenta;button=lightblue";
         user = "greeter";
       };
     };

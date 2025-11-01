@@ -1,7 +1,8 @@
 {
   pkgs,
   lib,
-  inputs,
+  config,
+  ...
 }: {
   networking.hostName = "polaris";
 
@@ -28,7 +29,7 @@
   networking.networkmanager.wifi.backend = "iwd";
   networking.networkmanager.dns = "none";
 
-  services.dnscrypt-proxy2 = {
+  services.dnscrypt-proxy = {
     enable = true;
     settings = {
       ipv6_servers = false;

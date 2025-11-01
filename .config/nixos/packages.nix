@@ -1,14 +1,15 @@
 {
   pkgs,
   lib,
-  inputs,
+  config,
+  ...
 }: let
-  cliPackages = import ./packages/cli.nix;
-  desktopPackages = import ./packages/desktop.nix;
-  devPackages = import ./packages/dev.nix;
-  funPackages = import ./packages/fun.nix;
-  miscPackages = import ./packages/misc.nix;
-  utilsPackages = import ./packages/utils.nix;
+  cliPackages = import ./packages/cli.nix {inherit pkgs;};
+  desktopPackages = import ./packages/desktop.nix {inherit pkgs;};
+  devPackages = import ./packages/dev.nix {inherit pkgs;};
+  funPackages = import ./packages/fun.nix {inherit pkgs;};
+  miscPackages = import ./packages/misc.nix {inherit pkgs;};
+  utilsPackages = import ./packages/utils.nix {inherit pkgs;};
 
   myPackages = cliPackages ++ desktopPackages ++ devPackages ++ funPackages ++ miscPackages ++ utilsPackages;
 in {

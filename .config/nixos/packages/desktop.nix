@@ -1,4 +1,4 @@
-{pkgs}:
+{pkgs, ...}:
 with pkgs; [
   niri
 
@@ -8,7 +8,7 @@ with pkgs; [
   hyprpicker
   hyprpolkitagent
   xdg-desktop-portal-hyprland
-  rofi-wayland
+  rofi
   wezterm
   nautilus
   wlsunset

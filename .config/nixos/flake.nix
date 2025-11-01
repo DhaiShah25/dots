@@ -7,11 +7,16 @@
 
   outputs = inputs: {
     nixosConfigurations.polaris = inputs.nixpkgs.lib.nixosSystem {
-      extraSpecialArgs = {inherit inputs;};
       modules = [
         {nix.settings.experimental-features = ["nix-command" "flakes"];}
         ./polaris.nix
-        /etc/nixos/hardware-configuration.nix
+        ./hardware-configuration.nix
+        inputs.home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.gale = ./home.nix;
+        }
       ];
     };
   };
