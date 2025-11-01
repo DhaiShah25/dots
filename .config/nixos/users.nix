@@ -1,10 +1,7 @@
 {
-  config,
   pkgs,
-  ...
+  inputs,
 }: {
-  imports = [<home-manager/nixos>];
-
   users.users.gale = {
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager"];
@@ -12,8 +9,8 @@
     shell = pkgs.nushell;
   };
 
-  home-manager.useGlobalPkgs = true;
-  home-manager.users.gale = {pkgs, ...}: {
+  inputs.home-manager.useGlobalPkgs = true;
+  inputs.home-manager.users.gale = {pkgs, ...}: {
     home.stateVersion = "25.05";
 
     services.syncthing.enable = true;

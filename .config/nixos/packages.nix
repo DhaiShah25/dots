@@ -1,18 +1,14 @@
 {
-  config,
-  lib,
   pkgs,
-  modulesPath,
-  ...
+  lib,
+  inputs,
 }: let
-  unstable = import <nixos-unstable> {config = {allowUnfree = true;};};
-
-  cliPackages = import ./packages/cli.nix {inherit pkgs unstable;};
-  desktopPackages = import ./packages/desktop.nix {inherit pkgs unstable;};
-  devPackages = import ./packages/dev.nix {inherit pkgs unstable;};
-  funPackages = import ./packages/fun.nix {inherit pkgs unstable;};
-  miscPackages = import ./packages/misc.nix {inherit pkgs unstable;};
-  utilsPackages = import ./packages/utils.nix {inherit pkgs unstable;};
+  cliPackages = import ./packages/cli.nix;
+  desktopPackages = import ./packages/desktop.nix;
+  devPackages = import ./packages/dev.nix;
+  funPackages = import ./packages/fun.nix;
+  miscPackages = import ./packages/misc.nix;
+  utilsPackages = import ./packages/utils.nix;
 
   myPackages = cliPackages ++ desktopPackages ++ devPackages ++ funPackages ++ miscPackages ++ utilsPackages;
 in {

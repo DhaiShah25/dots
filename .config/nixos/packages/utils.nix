@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs}:
 with pkgs; [
   unzip
   xz
@@ -32,4 +32,8 @@ with pkgs; [
   nix-tree
 
   ripgrep-all
+
+  imagemagick
+
+  difftastic
 ]

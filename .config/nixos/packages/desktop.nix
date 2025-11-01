@@ -1,7 +1,4 @@
-{
-  pkgs,
-  unstable,
-}:
+{pkgs}:
 with pkgs; [
   niri
 
@@ -36,9 +33,9 @@ with pkgs; [
 
   warehouse
 
-  unstable.obsidian
+  obsidian
 
-  unstable.audacity
+  audacity
   inkscape
   blender
   blockbench
@@ -46,4 +43,6 @@ with pkgs; [
   impala
 
   signal-desktop
+
+  teleprompter
 ]

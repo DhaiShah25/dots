@@ -1,16 +1,14 @@
 {
-  config,
-  lib,
   pkgs,
-  modulesPath,
-  ...
+  lib,
+  inputs,
 }: {
   networking.hostName = "polaris";
 
   time.timeZone = "America/New_York";
 
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [22000 8080 3000 5000 23231 8888];
+  networking.firewall.allowedTCPPorts = [22000 8080 3000 5000 23231 8888 5173];
   networking.firewall.allowedUDPPorts = [22000];
 
   networking.networkmanager.enable = true;

@@ -1,9 +1,7 @@
 {
-  config,
-  lib,
   pkgs,
-  modulesPath,
-  ...
+  lib,
+  inputs,
 }: {
   services.pipewire = {
     enable = true;

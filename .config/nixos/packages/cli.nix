@@ -1,10 +1,7 @@
-{
-  pkgs,
-  unstable,
-}:
+{pkgs}:
 with pkgs; [
   zsh
-  unstable.neovim
+  neovim
   nushell
   bat
   ripgrep
