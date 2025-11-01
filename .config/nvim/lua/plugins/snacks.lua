@@ -295,7 +295,6 @@ return {
 		bigfile = { enabled = true },
 		dashboard = { enabled = true },
 		git = { enabled = true },
-		image = { enabled = true },
 		explorer = { enabled = true },
 		indent = { enabled = true },
 		input = { enabled = true },
