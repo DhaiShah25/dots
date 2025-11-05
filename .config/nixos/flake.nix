@@ -11,7 +11,7 @@
         {nix.settings.experimental-features = ["nix-command" "flakes"];}
         ./polaris.nix
         ./hardware-configuration.nix
-        inputs.home-manager.darwinModules.home-manager
+        inputs.home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;

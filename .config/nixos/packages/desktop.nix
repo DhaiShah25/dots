@@ -19,6 +19,8 @@ with pkgs; [
 
   walker
 
+  dbus-broker
+
   mpv
   mpvScripts.mpris
 
