@@ -10,16 +10,16 @@ with pkgs; [
   xdg-desktop-portal-hyprland
   rofi
   wezterm
-  nautilus
+  cosmic-files
   wlsunset
   flatpak
   foot
   polkit
   swww
 
-  walker
+  ghostty
 
-  dbus-broker
+  walker
 
   mpv
   mpvScripts.mpris
@@ -44,7 +44,5 @@ with pkgs; [
 
   impala
 
-  signal-desktop
-
-  teleprompter
+  neovide
 ]

@@ -47,40 +47,21 @@
 
     nushell = {
       enable = true;
+      settings = {
+        show_banner = false;
+        completions.external = {
+          enable = true;
+          max_results = 200;
+        };
+        history = {
+          file_format = "sqlite";
+          max_size = 10000;
+          isolation = false;
+        };
+      };
       extraConfig = ''
-        $env.config.show_banner = false
-
-        $env.PATH = ($env.PATH |
-        split row (char esep) |
-        append /usr/bin/env
-        )
-
-        $env.config.history = {
-          file_format: sqlite
-          max_size: 1_000_000
-          sync_on_enter: true
-          isolation: false
-        }
-
-        $env.PATH ++= ['~/.local/bin']
+        $env.PATH ++= ['/usr/bin/env', '~/.local/bin']
         $env.EDITOR = "nvim";
-
-        let carapace_completer = {|spans|
-            let expanded_alias = (scope aliases | where name == $spans.0 | get -i 0 | get -i expansion)
-            let spans = (if $expanded_alias != null {
-              $spans | skip 1 | prepend ($expanded_alias | split row " " | take 1)
-            } else {
-              $spans | skip 1 | prepend ($spans.0)
-            })
-            carapace $spans.0 nushell ...$spans | from json
-        }
-
-        $env.config.completions = {
-            external: {
-              enable: true
-              completer: $carapace_completer
-            }
-        }
       '';
     };
 

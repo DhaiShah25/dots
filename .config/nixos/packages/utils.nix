@@ -36,4 +36,10 @@ with pkgs; [
   imagemagick
 
   difftastic
+
+  appimage-run
+
+  # Trying Out Stuff
+  lix
+  lix-diff
 ]
