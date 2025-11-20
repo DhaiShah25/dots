@@ -26,7 +26,6 @@ with pkgs; [
 
   chromium
   easyeffects
-  kdePackages.okular
   mission-center
   swaynotificationcenter
   lact
