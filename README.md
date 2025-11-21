@@ -25,18 +25,21 @@ stow .
 
 And Then Using Any Text Editor Change the following
 
-### /etc/nixos/configuration.nix
+### Hardware Configuration
 
-Add the import
+> [!IMPORTANT]
+> Do this, otherwise this will break your rebuild
 
-```
-  imports = [
-    ./hardware-configuration.nix
-    /home/<USERNAME>/.config/nixos/polaris.nix
-  ];
+copy your hardware-configuration.nix to replace the one in this directory
+
+```sh
+cp /etc/nixos/hardware-configuration.nix ~/dots/.config/nixos/hardware-configuration.nix && cd ~/dots && stow .
 ```
 
 ### ~/dots/.config/nixos/users.nix
+
+> [!IMPORTANT]
+> Do this, otherwise you will not be able to log into the new nixOS generation
 
 **Change everywhere it says gale to instead say your user's name**
 
@@ -44,6 +47,12 @@ Add the import
 
 Finally run
 
+> [!IMPORTANT]
+> This command includes rebooting so you switch over to the new system, login, kernel, etc
+> so please make sure to save your progress before running it or just omit the
+> `&& systemctl reboot` but rebooting is recommended to test if the system works and
+> so you have the right kernel, etc.
+
 ```sh
-sudo nixos-rebuild switch
+cd ~/.config/nixos/ && sudo nixos-rebuild switch --flake . && systemctl reboot
 ```

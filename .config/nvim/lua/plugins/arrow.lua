@@ -2,7 +2,7 @@ return {
 	"otavioschwanck/arrow.nvim",
 	keys = ";",
 	dependencies = {
-		{ "echasnovski/mini.icons" },
+		{ "nvim-mini/mini.icons" },
 	},
 	opts = {
 		show_icons = true,

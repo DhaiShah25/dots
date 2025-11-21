@@ -5,8 +5,6 @@ local function get_transparency()
 	return true
 end
 
-vim.print(get_transparency())
-
 return {
 	"rose-pine/neovim",
 	name = "rose-pine",
