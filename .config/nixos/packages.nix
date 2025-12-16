@@ -50,4 +50,13 @@ in {
       obs-vkcapture
     ];
   };
+
+  programs.git = {
+    enable = true;
+    config = {
+      init = {defaultBranch = "main";};
+    };
+  };
+
+  programs.nano.enable = false;
 }
