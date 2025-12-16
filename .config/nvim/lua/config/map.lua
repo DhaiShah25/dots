@@ -1,6 +1,6 @@
 local keymap = vim.keymap
 
-keymap.set("n", "<space>w", "<cmd>w<cr>")
+keymap.set("n", "<space>w", "<cmd>up<cr>")
 
 keymap.set("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
