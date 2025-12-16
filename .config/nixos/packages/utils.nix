@@ -39,6 +39,10 @@ with pkgs; [
 
   appimage-run
 
+  nh
+
+  pijul
+
   # Trying Out Stuff
   lix
   lix-diff

@@ -8,4 +8,7 @@ with pkgs; [
   presenterm
   resvg
   nerd-fonts.monaspace
+
+  macchina
+  microfetch
 ]
