@@ -12,6 +12,14 @@
     "nv" = "nvim";
   };
 
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+  };
+
   programs = {
     direnv = {
       enable = true;
@@ -41,13 +49,14 @@
       extraConfig = ''
         $env.PATH ++= ['/usr/bin/env', '~/.local/bin']
         $env.EDITOR = "nvim";
+
+        microfetch
       '';
     };
 
     carapace = {
       enable = true;
       enableNushellIntegration = true;
-      enableZshIntegration = true;
     };
 
     starship = {

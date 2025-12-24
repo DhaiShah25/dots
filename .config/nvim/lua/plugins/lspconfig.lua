@@ -6,5 +6,6 @@ return {
 		vim.lsp.enable("ts_ls")
 		vim.lsp.enable("emmet_language_server")
 		vim.lsp.enable("slangd")
+		vim.lsp.enable("qmlls")
 	end,
 }
