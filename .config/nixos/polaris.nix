@@ -24,9 +24,22 @@
     ./users.nix
   ];
 
+  nix = {
+    channel.enable = false;
+    package = pkgs.lixPackageSets.latest.lix;
+    settings.experimental-features = ["nix-command" "flakes"];
+  };
+
+  zramSwap = {
+    enable = true;
+    priority = 25;
+    algorithm = "lz4";
+    memoryPercent = 50;
+  };
+
   system.activationScripts.report-changes = ''
-    PATH=$PATH:${lib.makeBinPath [pkgs.nvd pkgs.nix]}
-    nvd diff $(ls -dv /nix/var/nix/profiles/system-*-link | tail -2)
+    PATH=$PATH:${lib.makeBinPath [pkgs.lix-diff pkgs.lixPackageSets.latest.lix]}
+    lix-diff $(ls -dv /nix/var/nix/profiles/system-*-link | tail -2 | head -1)
   '';
 
   # Most users should NEVER change this value after the initial install, for any reason,
