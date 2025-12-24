@@ -28,11 +28,7 @@ with pkgs; [
 
   nix-tree
 
-  ripgrep-all
-
   imagemagick
-
-  difftastic
 
   appimage-run
 
@@ -40,7 +36,6 @@ with pkgs; [
 
   pijul
 
-  # Trying Out Stuff
-  lix
-  lix-diff
+  trash-cli
+  rip2
 ]

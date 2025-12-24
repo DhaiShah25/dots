@@ -2,13 +2,21 @@
 with pkgs; [
   git
   git-extras
+  serie
   jujutsu
-  mold-wrapped
+  mold
   gitui
-  watchexec
   gh
 
-  rustup
+  (pkgs.fenix.stable.withComponents [
+    "cargo"
+    "clippy"
+    "rust-src"
+    "rustc"
+    "rustfmt"
+    "rust-analyzer"
+  ])
+
   cargo-nextest
   cargo-audit
 
