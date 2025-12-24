@@ -9,8 +9,8 @@
   time.timeZone = "America/New_York";
 
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [22000 8080 3000 5000 23231 8888 5173];
-  networking.firewall.allowedUDPPorts = [22000];
+  networking.firewall.allowedTCPPorts = [22000 8080 3000 5000 23231 8888 5173 27036 27037];
+  networking.firewall.allowedUDPPorts = [22000 27031 27036];
 
   networking.networkmanager.enable = true;
   networking.wireless.iwd.enable = true;
