@@ -1,7 +1,7 @@
 {pkgs, ...}:
 with pkgs; [
-  zsh
   neovim
+  helix
   nushell
   bat
   ripgrep
@@ -9,14 +9,9 @@ with pkgs; [
   jq
   curl
   wget
-  xh
   yazi
   dust
   bottom
   dufs
   tealdeer
-  nvd
-
-  niv
-  npins
 ]

@@ -23,6 +23,7 @@ in {
     enable = true;
     withUWSM = true;
   };
+
   programs.xwayland.enable = true;
 
   programs.waybar.enable = true;
@@ -31,8 +32,6 @@ in {
     enable = true;
     extraCompatPackages = [pkgs.proton-ge-bin];
   };
-
-  programs.zsh.enable = true;
 
   programs.gnupg.agent = {
     enable = true;

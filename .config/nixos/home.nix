@@ -22,27 +22,6 @@
 
     zsh = {
       enable = true;
-      enableCompletion = true;
-
-      antidote = {
-        enable = true;
-        plugins = [
-          "zsh-users/zsh-autosuggestions"
-        ];
-      };
-
-      history = {
-        ignoreDups = true;
-        ignoreSpace = true;
-        saveNoDups = true;
-        share = true;
-      };
-
-      syntaxHighlighting.enable = true;
-
-      initContent = ''
-        export PATH="/home/gale/.bun/bin:$PATH"
-      '';
     };
 
     nushell = {
@@ -79,7 +58,6 @@
 
     fzf = {
       enable = true;
-      enableZshIntegration = true;
     };
   };
 }

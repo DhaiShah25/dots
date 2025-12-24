@@ -9,6 +9,5 @@ with pkgs; [
   resvg
   nerd-fonts.monaspace
 
-  macchina
   microfetch
 ]

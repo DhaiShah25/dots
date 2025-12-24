@@ -12,13 +12,10 @@ with pkgs; [
   xorg.xprop
   grimblast
   tokei
-  typst
   kondo
   fzf
   delta
   playerctl
-
-  serie
 
   ffmpeg
 

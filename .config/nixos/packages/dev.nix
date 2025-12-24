@@ -24,10 +24,6 @@ with pkgs; [
 
   quickemu
 
-  deno
-
-  nodePackages_latest.vercel
-
   # Language Servers & Formatters
   ruff
   alejandra
@@ -36,4 +32,5 @@ with pkgs; [
   typescript-language-server
   emmet-language-server
   taplo
+  kdePackages.qtdeclarative
 ]
