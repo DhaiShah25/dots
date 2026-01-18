@@ -11,17 +11,17 @@
   miscPackages = import ./packages/misc.nix {inherit pkgs;};
   utilsPackages = import ./packages/utils.nix {inherit pkgs;};
 
-  myPackages = cliPackages ++ desktopPackages ++ devPackages ++ funPackages ++ miscPackages ++ utilsPackages;
+  myPackages = lib.concatLists [cliPackages desktopPackages devPackages funPackages miscPackages utilsPackages];
 in {
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = myPackages;
 
-  programs.uwsm.enable = true;
+  programs.hyprland.enable = true;
 
-  programs.hyprland = {
+  programs.appimage = {
     enable = true;
-    withUWSM = true;
+    binfmt = true;
   };
 
   programs.xwayland.enable = true;
