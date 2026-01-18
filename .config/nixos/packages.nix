@@ -57,5 +57,7 @@ in {
     };
   };
 
+  programs.kdeconnect.enable = true;
+
   programs.nano.enable = false;
 }

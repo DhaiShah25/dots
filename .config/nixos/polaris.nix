@@ -23,6 +23,28 @@
     ./users.nix
   ];
 
+  console = {
+    enable = true;
+    colors = [
+      "292c3c"
+      "e78284"
+      "a6d189"
+      "e5c890"
+      "8caaee"
+      "f4b8e4"
+      "81c8be"
+      "b5bfe2"
+      "626880"
+      "e78284"
+      "a6d189"
+      "e5c890"
+      "8caaee"
+      "f4b8e4"
+      "81c8be"
+      "a5adce"
+    ];
+  };
+
   nix = {
     channel.enable = false;
     package = pkgs.lixPackageSets.latest.lix;

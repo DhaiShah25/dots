@@ -8,6 +8,8 @@ with pkgs; [
   gitui
   gh
 
+  bacon
+
   (pkgs.fenix.stable.withComponents [
     "cargo"
     "clippy"
@@ -16,6 +18,10 @@ with pkgs; [
     "rustfmt"
     "rust-analyzer"
   ])
+
+  pkgs.fenix.targets.wasm32-unknown-unknown.stable.rust-std
+
+  samply
 
   cargo-nextest
   cargo-audit

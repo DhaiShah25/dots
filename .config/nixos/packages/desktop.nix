@@ -35,10 +35,13 @@ with pkgs; [
   inkscape
   blender
   blockbench
-
   godot
 
   impala
 
   quickshell
+
+  pcmanfm
+
+  super-productivity
 ]
