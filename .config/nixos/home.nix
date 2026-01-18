@@ -12,24 +12,11 @@
     "nv" = "nvim";
   };
 
-  gtk = {
-    enable = true;
-    iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-    };
-  };
-
   programs = {
     direnv = {
       enable = true;
       nix-direnv.enable = true;
-      enableZshIntegration = true;
       enableNushellIntegration = true;
-    };
-
-    zsh = {
-      enable = true;
     };
 
     nushell = {
@@ -62,7 +49,6 @@
     starship = {
       enable = true;
       enableNushellIntegration = true;
-      enableZshIntegration = true;
     };
 
     fzf = {

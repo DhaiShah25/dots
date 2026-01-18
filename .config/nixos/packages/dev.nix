@@ -30,8 +30,6 @@ with pkgs; [
 
   turso-cli
 
-  quickemu
-
   # Language Servers & Formatters
   ruff
   alejandra

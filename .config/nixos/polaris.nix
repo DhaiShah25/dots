@@ -14,7 +14,6 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.monaspace
-    font-awesome
   ];
 
   imports = [

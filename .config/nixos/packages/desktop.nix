@@ -27,7 +27,6 @@ with pkgs; [
   mpv
   mpvScripts.mpris
 
-  easyeffects
   swaynotificationcenter
   packet
 

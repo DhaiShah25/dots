@@ -9,15 +9,59 @@
   time.timeZone = "America/New_York";
 
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [22000 8080 3000 5000 23231 8888 5173 27036 27037];
-  networking.firewall.allowedUDPPorts = [22000 27031 27036];
+  networking.firewall.allowedTCPPorts = [
+    # SSHD
+    22
+
+    # Browsing
+    80
+    443
+
+    # Syncthing
+    22000
+
+    # Tinyproxy
+    8888
+
+    # Steam Link
+    27036
+    27037
+  ];
+  networking.firewall.allowedUDPPorts = [
+    # Browsing
+    443
+
+    # Syncthing
+    22000
+    21027
+
+    # Steam Link
+    27031
+    27036
+  ];
+
+  networking.firewall = {
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
+    allowedUDPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
+  };
 
   networking.networkmanager.enable = true;
   networking.wireless.iwd.enable = true;
 
   networking.wireless.iwd.settings = {
     IPv6 = {
-      Enabled = true;
+      # My ISP Doesn't Support It Anyway
+      Enabled = false;
     };
     Settings = {
       AutoConnect = true;

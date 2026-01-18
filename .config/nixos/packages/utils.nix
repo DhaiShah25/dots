@@ -30,12 +30,12 @@ with pkgs; [
 
   imagemagick
 
-  appimage-run
-
   nh
 
   pijul
 
   trash-cli
   rip2
+
+  gearlever
 ]
