@@ -1,11 +1,9 @@
 pragma ComponentBehavior: Bound
 import QtQuick
-import Quickshell
 import Quickshell.Widgets
 import Quickshell.Services.SystemTray
 
 Row {
-    height: 30
     width: childrenRect.width
 
     spacing: 10
@@ -18,7 +16,7 @@ Row {
             color: "transparent"
 
             implicitWidth: 20
-            implicitHeight: 20
+            implicitHeight: 16
 
             anchors.verticalCenter: parent.verticalCenter
 

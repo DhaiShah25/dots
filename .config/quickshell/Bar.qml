@@ -1,5 +1,7 @@
-import Quickshell
 import QtQuick
+import QtQuick.Layouts
+import Quickshell
+import Quickshell.Widgets
 
 import "bar"
 
@@ -12,8 +14,7 @@ Scope {
             required property var modelData
 
             screen: modelData
-
-            color: "#303446"
+            color: "transparent"
 
             anchors {
                 top: true
@@ -28,32 +29,57 @@ Scope {
                 left: 3
             }
 
-            implicitHeight: 40
+            implicitHeight: 30
 
-            Row {
-                anchors {
-                    left: parent.left
-                    verticalCenter: parent.verticalCenter
+            RowLayout {
+                anchors.fill: parent
+                spacing: 0
+
+                WrapperRectangle {
+                    implicitHeight: 30
+                    color: ThemeConsts.backgroundColor
+                    margin: 5
+                    radius: ThemeConsts.radius
+                    Layout.alignment: Qt.AlignLeft
+                    ClockWidget {}
                 }
 
-                Workspaces {}
-            }
-
-            Row {
-                anchors.centerIn: parent
-
-                ClockWidget {}
-            }
-
-            Row {
-                anchors {
-                    right: parent.right
-                    verticalCenter: parent.verticalCenter
+                Item {
+                    Layout.fillWidth: true
                 }
 
-                SystemTray {}
-                Volume {}
+                WrapperRectangle {
+                    color: ThemeConsts.backgroundColor
+                    margin: 5
+                    radius: ThemeConsts.radius
+                    implicitHeight: 30
+
+                    Layout.alignment: Qt.AlignCenter
+
+                    Workspaces {}
+                }
+
+                Item {
+                    Layout.fillWidth: true
+                }
+
+                WrapperRectangle {
+                    color: ThemeConsts.backgroundColor
+                    margin: 5
+                    radius: ThemeConsts.radius
+                    implicitHeight: 30
+
+                    Layout.alignment: Qt.AlignRight
+
+                    Row {
+                        spacing: 5
+                        SystemTray {}
+                        Volume {}
+                    }
+                }
             }
+
+            Panel {}
         }
     }
 }

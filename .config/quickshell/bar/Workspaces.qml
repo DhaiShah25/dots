@@ -1,44 +1,35 @@
 pragma ComponentBehavior: Bound
 import QtQuick
-import QtQuick.Layouts
 import Quickshell.Hyprland
 
-RowLayout {
+Row {
     id: workspaceBar
+
+    spacing: 10
+
+    anchors.verticalCenter: parent.verticalCenter
 
     readonly property var workspaces: Hyprland.workspaces
 
-    height: 30
-    width: childrenRect.width
-
     Repeater {
-        model: parent.workspaces.values
+        model: 7
 
         delegate: Rectangle {
-            id: wsItem
+            required property int index
 
-            height: 30
-            width: 30
+            anchors.verticalCenter: parent.verticalCenter
 
-            color: modelData.focused ? "#393552" : "#00000000"
+            height: 15
+            width: index == Hyprland.focusedWorkspace.id - 1 ? 25 : 15
 
             radius: 10
 
-            required property HyprlandWorkspace modelData
-            Text {
-                anchors.centerIn: parent
-                text: parent.modelData.name
-                font.pixelSize: 20
-                font.family: "MonaspiceKr NFP"
-                color: "#e0def4"
-            }
+            color: index == Hyprland.focusedWorkspace.id - 1 ? "#7287fd" : "#babbf1"
 
-            MouseArea {
-                anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
-
-                onClicked: {
-                    parent.modelData.activate();
+            Behavior on width {
+                NumberAnimation {
+                    duration: 250
+                    easing.type: Easing.OutQuint
                 }
             }
         }
