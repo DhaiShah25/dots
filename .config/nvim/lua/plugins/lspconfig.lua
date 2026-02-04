@@ -7,5 +7,7 @@ return {
 		vim.lsp.enable("emmet_language_server")
 		vim.lsp.enable("slangd")
 		vim.lsp.enable("qmlls")
+		vim.lsp.enable("harper-ls")
+		vim.lsp.enable("markdown-oxide")
 	end,
 }

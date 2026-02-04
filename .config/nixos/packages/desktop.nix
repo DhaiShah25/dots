@@ -17,7 +17,6 @@ with pkgs; [
   chromium
 
   rofi
-  wezterm
   flatpak
   foot
   swww
