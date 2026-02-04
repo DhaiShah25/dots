@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+DEV_DIR="$HOME/dev"
+DATA_DIR="$HOME/.cache/ghostty"
+HISTORY_FILE="$DATA_DIR/session_history"
+STATE_FILE="$DATA_DIR/last_session"
+
+mkdir -p "$DATA_DIR"
+touch "$HISTORY_FILE"
+cd ~
+
+if [[ "$1" == "--new" ]]; then
+    selected=$(fd . --max-depth=1 --base-directory ~ --type=d dev . | fzf --prompt="New Project > ")
+else
+    selected=$(tail -n 50 "$HISTORY_FILE" | tac | awk '!seen[$0]++' | fzf --prompt="Switch Session > ")
+fi
+
+[[ -z "$selected" ]] && exit 0
+
+grep -vxe "$selected" "$HISTORY_FILE" > "${HISTORY_FILE}.tmp"
+mv "${HISTORY_FILE}.tmp" "$HISTORY_FILE"
+echo "$selected" >> "$HISTORY_FILE"
+echo "$selected" > "$STATE_FILE"
+
+pkill ghostty
+
+nohup ghostty --working-directory="$selected" >/dev/null 2>/dev/null & disown
