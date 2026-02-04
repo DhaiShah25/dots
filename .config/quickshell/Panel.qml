@@ -1,7 +1,6 @@
 import Quickshell.Hyprland
 import Quickshell
 import QtQuick
-import QtQuick.Layouts
 import "panel"
 
 PanelWindow {
@@ -43,7 +42,7 @@ PanelWindow {
         anchors.fill: parent
         spacing: 10
 
-        Notif {}
         Mpris {}
+        Notif {}
     }
 }

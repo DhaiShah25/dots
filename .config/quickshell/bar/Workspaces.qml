@@ -24,7 +24,7 @@ Row {
 
             radius: 10
 
-            color: index == Hyprland.focusedWorkspace.id - 1 ? "#7287fd" : "#babbf1"
+            color: index == Hyprland.focusedWorkspace.id - 1 ? "#8caaee" : "#ae8caaee"
 
             Behavior on width {
                 NumberAnimation {

@@ -41,6 +41,8 @@ Scope {
                     margin: 5
                     radius: ThemeConsts.radius
                     Layout.alignment: Qt.AlignLeft
+                    border.color: "#8caaee"
+                    border.width: 1
                     ClockWidget {}
                 }
 
@@ -53,6 +55,9 @@ Scope {
                     margin: 5
                     radius: ThemeConsts.radius
                     implicitHeight: 30
+
+                    border.color: "#8caaee"
+                    border.width: 1
 
                     Layout.alignment: Qt.AlignCenter
 
@@ -68,6 +73,9 @@ Scope {
                     margin: 5
                     radius: ThemeConsts.radius
                     implicitHeight: 30
+
+                    border.color: "#8caaee"
+                    border.width: 1
 
                     Layout.alignment: Qt.AlignRight
 

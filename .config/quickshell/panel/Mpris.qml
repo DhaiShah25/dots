@@ -9,17 +9,15 @@ Column {
     width: parent.width
 
     Text {
-        text: "Mpris Players:"
+        text: " Players:"
         font.family: ThemeConsts.fontFamily
         font.bold: true
         font.pointSize: ThemeConsts.fontSize * 1.4
         color: ThemeConsts.textColor
     }
 
-    ListView {
+    Repeater {
         model: Mpris.players.values
-        width: 450
-        height: 400
 
         delegate: WrapperRectangle {
             required property MprisPlayer modelData
@@ -27,7 +25,7 @@ Column {
             border.color: ThemeConsts.surfaceColor0
             border.width: 1
             width: 450
-            margin: 5
+            margin: 10
             radius: ThemeConsts.radius
             Row {
                 Column {

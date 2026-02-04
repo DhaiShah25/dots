@@ -5,7 +5,7 @@ import ".."
 
 Text {
     anchors.verticalCenter: parent.verticalCenter
-    text: (Pipewire.defaultAudioSink.audio.volume * 100).toFixed(0) + "% "
+    text: (Pipewire.defaultAudioSink.audio.volume * 100).toFixed(0) + (Pipewire.defaultAudioSink.audio.muted ? "% " : "% ")
     font.family: ThemeConsts.fontFamily
     font.pixelSize: 16
     color: "#e0def4"

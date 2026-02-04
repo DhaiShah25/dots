@@ -1,4 +1,5 @@
 import QtQuick
+import Quickshell.Widgets
 import QtQuick.Layouts
 import ".."
 
@@ -8,7 +9,7 @@ ColumnLayout {
     width: parent.width
 
     Text {
-        text: "Notifications:"
+        text: " Notifications:"
         font.family: ThemeConsts.fontFamily
         font.bold: true
         font.pointSize: ThemeConsts.fontSize * 1.4
@@ -16,50 +17,54 @@ ColumnLayout {
     }
 
     Repeater {
-        model: Notifs.trackedNotifications
-        delegate: Rectangle {
-            id: delegateRoot
-            required property var modelData
+        model: Notifs.trackedNotifications.values.slice(-5).reverse()
 
-            Layout.fillWidth: true
-            implicitHeight: 45
-            color: ThemeConsts.surfaceColor0
-            radius: ThemeConsts.radius
+        delegate: WrapperRectangle {
+            color: ThemeConsts.backgroundColor
+            radius: 4
+            border.color: "#8caaee"
+            border.width: 1
+            margin: 10
 
-            RowLayout {
-                anchors.fill: parent
-                anchors.margins: 8
-                spacing: 10
+            implicitWidth: parent.width
 
-                ColumnLayout {
-                    Layout.fillWidth: true
-                    spacing: 0
+            ColumnLayout {
+                id: contentColumn
 
-                    Text {
-                        text: modelData.summary
-                        font.family: ThemeConsts.fontFamily
-                        font.pointSize: ThemeConsts.fontSize
-                        font.bold: true
-                        color: ThemeConsts.textColor
-                        elide: Text.ElideRight
-                        Layout.fillWidth: true
+                spacing: 12
+
+                RowLayout {
+                    spacing: 12
+
+                    Image {
+                        visible: !!(modelData.image || modelData.appIcon)
+                        source: modelData.image || modelData.appIcon
+                        Layout.preferredWidth: 40
+                        Layout.preferredHeight: 40
+                        Layout.alignment: Qt.AlignTop
+                        fillMode: Image.PreserveAspectCrop
+                        clip: true
                     }
 
-                    Text {
-                        text: modelData.body
-                        font.family: ThemeConsts.fontFamily
-                        font.pointSize: ThemeConsts.fontSize * 0.6
-                        color: ThemeConsts.textColor
-                        opacity: 0.8
-                        elide: Text.ElideRight
+                    ColumnLayout {
                         Layout.fillWidth: true
+                        spacing: 4
+                        Text {
+                            text: modelData.summary
+                            font.bold: true
+                            color: ThemeConsts.textColor
+                            elide: Text.ElideRight
+                            Layout.fillWidth: true
+                        }
+                        Text {
+                            text: modelData.body
+                            color: ThemeConsts.textColor
+                            opacity: 0.8
+                            wrapMode: Text.WordWrap
+                            Layout.fillWidth: true
+                            font.pointSize: 10
+                        }
                     }
-                }
-
-                Text {
-                    text: ""
-                    color: ThemeConsts.errorColor
-                    font.bold: true
 
                     MouseArea {
                         anchors.fill: parent

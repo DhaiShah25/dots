@@ -9,7 +9,7 @@ QtObject {
     readonly property color surfaceColor1: "#51576d"
 
     readonly property int fontSize: 12
-    readonly property string fontFamily: "MonaspiceKr Nerd Font Propo"
+    readonly property string fontFamily: "MonaspiceRn Nerd Font Propo"
 
     readonly property int radius: 5
 }
