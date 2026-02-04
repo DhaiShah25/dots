@@ -43,4 +43,6 @@ with pkgs; [
   pcmanfm
 
   super-productivity
+
+  thunderbird
 ]

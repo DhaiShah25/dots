@@ -17,6 +17,8 @@ with pkgs; [
   delta
   playerctl
 
+  dipc
+
   ffmpeg
 
   tinyproxy
@@ -38,4 +40,6 @@ with pkgs; [
   rip2
 
   gearlever
+
+  harper
 ]

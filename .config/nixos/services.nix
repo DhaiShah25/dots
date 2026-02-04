@@ -42,5 +42,5 @@
 
   services.fwupd.enable = true;
 
-  services.logind.lidSwitch = "suspend-then-hibernate";
+  services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
 }

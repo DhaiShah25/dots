@@ -8,4 +8,5 @@ with pkgs; [
   nerd-fonts.monaspace
   microfetch
   fastfetch
+  wiki-tui
 ]

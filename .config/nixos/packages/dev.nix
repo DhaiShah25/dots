@@ -8,7 +8,14 @@ with pkgs; [
   gitui
   gh
 
+  cargo-info
+  rusty-man
+
+  butler
+
   bacon
+
+  just
 
   (pkgs.fenix.stable.withComponents [
     "cargo"
@@ -25,6 +32,7 @@ with pkgs; [
 
   cargo-nextest
   cargo-audit
+  cargo-limit
 
   clang
 
@@ -45,4 +53,5 @@ with pkgs; [
   emmet-language-server
   taplo
   kdePackages.qtdeclarative
+  markdown-oxide
 ]
