@@ -87,7 +87,7 @@ Scope {
                     Timer {
                         interval: 10000
                         running: true
-                        onTriggered: modelData.dismiss()
+                        onTriggered: parent.visible = false
                     }
                 }
             }

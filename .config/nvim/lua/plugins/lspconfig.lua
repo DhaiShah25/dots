@@ -8,6 +8,6 @@ return {
 		vim.lsp.enable("slangd")
 		vim.lsp.enable("qmlls")
 		vim.lsp.enable("harper-ls")
-		vim.lsp.enable("markdown-oxide")
+		vim.lsp.enable("markdown_oxide")
 	end,
 }
