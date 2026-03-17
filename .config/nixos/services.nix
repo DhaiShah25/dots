@@ -36,11 +36,9 @@
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
       PermitRootLogin = "no";
-      AllowUsers = ["git"];
+      AllowUsers = ["git" "gale"];
     };
   };
 
   services.fwupd.enable = true;
-
-  services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
 }

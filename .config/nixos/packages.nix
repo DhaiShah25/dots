@@ -4,14 +4,11 @@
   config,
   ...
 }: let
-  cliPackages = import ./packages/cli.nix {inherit pkgs;};
-  desktopPackages = import ./packages/desktop.nix {inherit pkgs;};
-  devPackages = import ./packages/dev.nix {inherit pkgs;};
-  funPackages = import ./packages/fun.nix {inherit pkgs;};
-  miscPackages = import ./packages/misc.nix {inherit pkgs;};
-  utilsPackages = import ./packages/utils.nix {inherit pkgs;};
+  categories = ["cli" "desktop" "dev" "fun" "misc" "utils" "create"];
 
-  myPackages = lib.concatLists [cliPackages desktopPackages devPackages funPackages miscPackages utilsPackages];
+  packageLists = map (name: import ./packages/${name}.nix {inherit pkgs;}) categories;
+
+  myPackages = lib.concatLists packageLists;
 in {
   nixpkgs.config.allowUnfree = true;
 
@@ -26,8 +23,6 @@ in {
 
   programs.xwayland.enable = true;
 
-  programs.waybar.enable = true;
-
   programs.steam = {
     enable = true;
     extraCompatPackages = [pkgs.proton-ge-bin];
@@ -35,7 +30,6 @@ in {
 
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
   };
 
   programs.obs-studio = {
@@ -56,8 +50,6 @@ in {
       init = {defaultBranch = "main";};
     };
   };
-
-  programs.kdeconnect.enable = true;
 
   programs.nano.enable = false;
 }

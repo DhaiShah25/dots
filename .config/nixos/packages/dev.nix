@@ -7,15 +7,11 @@ with pkgs; [
   mold
   gitui
   gh
-
-  cargo-info
-  rusty-man
+  git-cliff
 
   butler
 
   bacon
-
-  just
 
   (pkgs.fenix.stable.withComponents [
     "cargo"
@@ -26,23 +22,22 @@ with pkgs; [
     "rust-analyzer"
   ])
 
-  pkgs.fenix.targets.wasm32-unknown-unknown.stable.rust-std
-
-  samply
-
   cargo-nextest
   cargo-audit
   cargo-limit
 
+  cmake
   clang
+  ninja
 
   nodejs
-  bun
   pnpm
 
   gen-license
 
   turso-cli
+
+  odin
 
   # Language Servers & Formatters
   ruff
@@ -54,4 +49,6 @@ with pkgs; [
   taplo
   kdePackages.qtdeclarative
   markdown-oxide
+  slint-lsp
+  ols
 ]

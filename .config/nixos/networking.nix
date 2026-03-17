@@ -23,6 +23,9 @@
     # Tinyproxy
     8888
 
+    # AI
+    8100
+
     # Steam Link
     27036
     27037
@@ -39,21 +42,6 @@
     27031
     27036
   ];
-
-  networking.firewall = {
-    allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
-    allowedUDPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
-  };
 
   networking.networkmanager.enable = true;
   networking.wireless.iwd.enable = true;

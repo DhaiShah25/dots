@@ -58,11 +58,6 @@
     memoryPercent = 50;
   };
 
-  system.activationScripts.report-changes = ''
-    PATH=$PATH:${lib.makeBinPath [pkgs.lix-diff pkgs.lixPackageSets.latest.lix]}
-    lix-diff $(ls -dv /nix/var/nix/profiles/system-*-link | tail -2 | head -1)
-  '';
-
   # Most users should NEVER change this value after the initial install, for any reason,
   # even if you've upgraded your system to a new NixOS release.
   #

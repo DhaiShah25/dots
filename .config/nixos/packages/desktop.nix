@@ -9,40 +9,26 @@ with pkgs; [
   hyprland-qt-support
   hyprsunset
   hyprcursor
+  hyprpaper
+
+  librewolf
 
   dbus-broker
 
   pavucontrol
 
-  chromium
+  flatpak
 
   rofi
-  flatpak
-  foot
-  swww
 
   ghostty
+  foot
 
   mpv
-  mpvScripts.mpris
-
-  swaynotificationcenter
-  packet
-
-  obsidian
-
-  inkscape
-  blender
-  blockbench
-  godot
-
-  impala
 
   quickshell
 
   pcmanfm
 
-  super-productivity
-
-  thunderbird
+  easyeffects
 ]

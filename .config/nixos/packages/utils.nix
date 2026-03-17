@@ -9,37 +9,31 @@ with pkgs; [
   clipse
   bitwarden-cli
   pass
-  xorg.xprop
+
+  hyperfine
+
   grimblast
+  wf-recorder
+  wl-screenrec
+
   tokei
   kondo
   fzf
   delta
-  playerctl
 
   dipc
 
   ffmpeg
+  imagemagick
 
   tinyproxy
 
   libqalculate
+
   starship
 
-  icon-library
-
-  nix-tree
-
-  imagemagick
-
   nh
-
-  pijul
-
-  trash-cli
-  rip2
-
-  gearlever
+  nix-tree
 
   harper
 ]

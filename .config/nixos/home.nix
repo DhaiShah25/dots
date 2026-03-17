@@ -14,7 +14,6 @@
 
   home.pointerCursor = {
     enable = true;
-    gtk.enable = true;
     package = pkgs.catppuccin-cursors.frappeDark;
     name = "Catppuccin Frappe Dark";
     size = 20;
