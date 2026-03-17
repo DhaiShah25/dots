@@ -37,15 +37,13 @@
           max_results = 200;
         };
         history = {
-          file_format = "sqlite";
-          max_size = 10000;
+          max_size = 1000;
           isolation = false;
         };
       };
       extraConfig = ''
         $env.PATH ++= ['/usr/bin/env', '~/.local/bin']
         $env.EDITOR = "nvim";
-
         microfetch
       '';
     };
@@ -62,6 +60,12 @@
 
     fzf = {
       enable = true;
+    };
+
+    atuin = {
+      enable = true;
+      enableNushellIntegration = true;
+      settings.style = "compact";
     };
   };
 }
