@@ -6,7 +6,7 @@ theme = Nord
 
 font-size = 14
 
-keybind = alt+f=text:guess --new\n
-keybind = alt+l=text:guess\n
-
 gtk-custom-css = style.css
+gtk-single-instance = true
+
+mouse-hide-while-typing = true
