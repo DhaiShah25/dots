@@ -14,10 +14,21 @@ vim.keymap.set("n", "<leader>nn", function()
 	vim.cmd.Oil("/home/gale/vault/")
 end)
 
-vim.keymap.set("n", "<leader>nq", function()
+vim.keymap.set("n", "<leader>nd", function()
+	vim.cmd.edit("/home/gale/vault/journals/" .. os.date("%Y-W%V") .. ".md")
+end)
+
+vim.keymap.set("n", "<leader>nf", function()
 	Snacks.picker.files({ cwd = "/home/gale/vault" })
 end)
 
 vim.keymap.set("n", "<leader>ns", function()
 	Snacks.picker.grep({ cwd = "/home/gale/vault" })
 end)
+
+vim.keymap.set(
+	"n",
+	"<leader>x",
+	[[<CMD>exec search("- \\[ \\]", "bcn", line(".")) ? "norm ci]x" : "norm ci] "<CR>]],
+	default_opts
+)

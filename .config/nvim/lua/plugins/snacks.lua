@@ -272,7 +272,7 @@ return {
 		{
 			"<leader>ss",
 			function()
-				Snacks.picker.lsp_symbols()
+				Snacks.picker.lsp_symbols({ layout = { preset = "sidebar" } })
 			end,
 			desc = "LSP Symbols",
 		},
