@@ -26,6 +26,7 @@ with pkgs; [
   kondo
   fzf
   difftastic
+  delta
 
   dipc
 
