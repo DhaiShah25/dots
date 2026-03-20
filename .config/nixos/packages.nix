@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  config,
   ...
 }: let
   categories = ["cli" "desktop" "dev" "fun" "misc" "utils" "create"];
@@ -37,9 +36,7 @@ in {
 
     plugins = with pkgs.obs-studio-plugins; [
       wlrobs
-      obs-backgroundremoval
       obs-pipewire-audio-capture
-      obs-gstreamer
       obs-vkcapture
     ];
   };

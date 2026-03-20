@@ -1,13 +1,7 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   users.users.gale = {
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager"];
-    packages = with pkgs; [];
     shell = pkgs.nushell;
   };
 

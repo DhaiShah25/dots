@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}: {
+{...}: {
   networking.hostName = "polaris";
 
   time.timeZone = "America/New_York";

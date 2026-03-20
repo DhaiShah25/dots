@@ -1,5 +1,11 @@
 {pkgs, ...}:
 with pkgs; [
+  direnv
+  nix-direnv
+  carapace
+  starship
+  atuin
+
   unzip
   xz
   gzip
@@ -19,7 +25,7 @@ with pkgs; [
   tokei
   kondo
   fzf
-  delta
+  difftastic
 
   dipc
 
@@ -30,10 +36,9 @@ with pkgs; [
 
   libqalculate
 
-  starship
-
   nh
   nix-tree
+  nix-output-monitor
 
   harper
 ]

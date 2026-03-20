@@ -11,6 +11,8 @@ with pkgs; [
   hyprcursor
   hyprpaper
 
+  catppuccin-cursors.frappeDark
+
   librewolf
 
   dbus-broker

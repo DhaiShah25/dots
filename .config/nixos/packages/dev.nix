@@ -13,18 +13,8 @@ with pkgs; [
 
   bacon
 
-  (pkgs.fenix.stable.withComponents [
-    "cargo"
-    "clippy"
-    "rust-src"
-    "rustc"
-    "rustfmt"
-    "rust-analyzer"
-  ])
-
   cargo-nextest
   cargo-audit
-  cargo-limit
 
   cmake
   clang
@@ -47,8 +37,8 @@ with pkgs; [
   typescript-language-server
   emmet-language-server
   taplo
-  kdePackages.qtdeclarative
   markdown-oxide
   slint-lsp
   ols
+  nixd
 ]

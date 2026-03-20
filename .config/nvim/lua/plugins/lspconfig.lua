@@ -12,5 +12,6 @@ return {
 		vim.lsp.enable("slint_lsp")
 		vim.lsp.enable("zls")
 		vim.lsp.enable("ols")
+		vim.lsp.enable("nixd")
 	end,
 }
