@@ -1,13 +1,8 @@
 return {
-	"stevearc/oil.nvim",
-	keys = {
-		{ "-", "<CMD>Oil<CR>", desc = "Open parent directory" },
-	},
-	opts = {
-		view_options = {
+	"gh:stevearc/oil.nvim",
+	setup = function()
+		require("oil").setup({ view_options = {
 			show_hidden = true,
-		},
-	},
-	dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-	lazy = false,
+		} })
+	end,
 }

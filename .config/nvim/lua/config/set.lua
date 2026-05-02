@@ -21,6 +21,8 @@ vim.o.mouse = "a"
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
+vim.o.incsearch = true
+vim.o.hlsearch = true
 
 vim.o.termguicolors = true
 
@@ -37,6 +39,16 @@ vim.o.cursorline = true
 
 vim.o.confirm = true
 
+vim.o.colorcolumn = "100"
+
 vim.schedule(function()
 	vim.o.clipboard = "unnamedplus"
 end)
+
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 10
+
+vim.o.shell = "nu"
+
+vim.diagnostic.config({ virtual_lines = true })
