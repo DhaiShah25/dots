@@ -3,6 +3,8 @@ $env.config.show_banner = false
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
+zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
+
 $env.config.history.isolation = false
 $env.config.history.max_size = 1000
 atuin init nu | save -f ($nu.data-dir | path join "vendor/autoload/atuin.nu")
@@ -19,10 +21,16 @@ $env.config.hooks.env_change.PWD ++= [{||
   $env.PATH = do (env-conversions).path.from_string $env.PATH
 }]
 
+$env.PATH = do (env-conversions).path.from_string $env.PATH
 $env.PATH ++= ['/usr/bin/env', '~/.local/bin']
 $env.EDITOR = "nvim";
 $env.VISUAL = "nvim";
+$env.SHELL = "nu";
 
 alias "nv" = nvim
+def wo [time: string = "25m"] { timer $time; spd-say "Work Session Done!" }
+def br [time: string = "5m"] { timer $time; spd-say "Work Session Done!" }
+
+alias bell = ffplay /run/current-system/sw/share/sounds/ocean/stereo/bell.oga -nodisp -autoexit -af "volume=2.0"
 
 microfetch
