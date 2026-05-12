@@ -1,36 +1,41 @@
-{pkgs, ...}:
-with pkgs; [
-  hyprland
-  hyprlock
-  hypridle
-  hyprpicker
-  hyprpolkitagent
-  xdg-desktop-portal-hyprland
-  hyprland-qt-support
-  hyprsunset
-  hyprcursor
-  hyprpaper
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    hyprland
+    hyprlock
+    hypridle
+    hyprpicker
+    hyprpolkitagent
+    xdg-desktop-portal-hyprland
+    hyprland-qt-support
+    hyprsunset
+    hyprcursor
+    hyprpaper
 
-  catppuccin-cursors.frappeDark
+    catppuccin-cursors.frappeDark
 
-  librewolf
+    librewolf
 
-  dbus-broker
+    dbus-broker
 
-  pavucontrol
+    pavucontrol
 
-  flatpak
+    rofi
 
-  rofi
+    ghostty
+    foot
 
-  ghostty
-  foot
+    quickshell
 
-  mpv
+    pcmanfm
 
-  quickshell
+    easyeffects
 
-  pcmanfm
+    kdePackages.ocean-sound-theme
 
-  easyeffects
-]
+    rnote
+
+    tofi
+
+    bitwarden-desktop
+  ];
+}

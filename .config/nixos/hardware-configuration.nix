@@ -10,7 +10,7 @@
 
   boot.initrd.availableKernelModules = ["vmd" "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" "sr_mod"];
   boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-intel"];
+  boot.kernelModules = ["kvm-intel" "uinput"];
   boot.extraModulePackages = [];
 
   boot.resumeDevice = "/dev/disk/by-uuid/8c496227-8c91-48a1-a936-47ac14224310";

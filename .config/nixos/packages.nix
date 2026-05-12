@@ -1,24 +1,7 @@
-{
-  pkgs,
-  lib,
-  ...
-}: let
-  categories = ["cli" "desktop" "dev" "fun" "misc" "utils" "create"];
-
-  packageLists = map (name: import ./packages/${name}.nix {inherit pkgs;}) categories;
-
-  myPackages = lib.concatLists packageLists;
-in {
+{pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = myPackages;
-
   programs.hyprland.enable = true;
-
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-  };
 
   programs.xwayland.enable = true;
 

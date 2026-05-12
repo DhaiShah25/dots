@@ -1,45 +1,52 @@
-{pkgs, ...}:
-with pkgs; [
-  direnv
-  nix-direnv
-  carapace
-  starship
-  atuin
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    tree-sitter
 
-  unzip
-  xz
-  gzip
-  stow
-  libnotify
-  wl-clipboard
-  clipse
-  bitwarden-cli
-  pass
+    ollama
+    syncthing
 
-  hyperfine
+    direnv
+    nix-direnv
+    carapace
+    starship
+    atuin
 
-  grimblast
-  wf-recorder
-  wl-screenrec
+    unzip
+    xz
+    gzip
+    stow
+    libnotify
+    wl-clipboard
+    clipse
+    pass
 
-  tokei
-  kondo
-  fzf
-  difftastic
-  delta
+    hyperfine
 
-  dipc
+    grimblast
+    wf-recorder
+    wl-screenrec
 
-  ffmpeg
-  imagemagick
+    tokei
+    kondo
+    fzf
+    difftastic
+    delta
 
-  tinyproxy
+    dipc
 
-  libqalculate
+    ffmpeg
+    imagemagick
 
-  nh
-  nix-tree
-  nix-output-monitor
+    tinyproxy
 
-  harper
-]
+    libqalculate
+
+    nh
+    nix-tree
+    nix-output-monitor
+
+    harper
+
+    cachix
+  ];
+}

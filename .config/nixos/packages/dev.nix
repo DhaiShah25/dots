@@ -1,44 +1,55 @@
-{pkgs, ...}:
-with pkgs; [
-  git
-  git-extras
-  serie
-  jujutsu
-  mold
-  gitui
-  gh
-  git-cliff
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    helix
 
-  butler
+    gdb
 
-  bacon
+    git
+    git-extras
+    serie
+    jujutsu
+    mold
+    wild
+    gitui
+    gh
+    git-cliff
 
-  cargo-nextest
-  cargo-audit
+    butler
 
-  cmake
-  clang
-  ninja
+    bacon
 
-  nodejs
-  pnpm
+    rustup
+    cargo-nextest
+    cargo-audit
 
-  gen-license
+    cmake
+    clang
+    clang-tools
+    bear
+    meson
+    ninja
 
-  turso-cli
+    nodejs
+    pnpm
 
-  odin
+    gen-license
 
-  # Language Servers & Formatters
-  ruff
-  alejandra
-  stylua
-  prettierd
-  typescript-language-server
-  emmet-language-server
-  taplo
-  markdown-oxide
-  slint-lsp
-  ols
-  nixd
-]
+    turso-cli
+
+    zls
+    zig
+
+    # Language Servers & Formatters
+    ruff
+    alejandra
+    stylua
+    prettierd
+    typescript-language-server
+    emmet-language-server
+    taplo
+    markdown-oxide
+    slint-lsp
+    nixd
+    lua-language-server
+  ];
+}

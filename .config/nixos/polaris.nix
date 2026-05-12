@@ -4,22 +4,19 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.enable = false;
+  hardware.bluetooth.powerOnBoot = false;
+
+  hardware.opentabletdriver.enable = true;
+  hardware.uinput.enable = true;
 
   environment.sessionVariables = {
-    FLAKE = "/home/gale/dots/.config/nixos/";
+    NH_FLAKE = "/home/gale/dots/.config/nixos/";
   };
 
   fonts.packages = with pkgs; [
     nerd-fonts.monaspace
-  ];
-
-  imports = [
-    ./packages.nix
-    ./services.nix
-    ./networking.nix
-    ./users.nix
+    nerd-fonts.iosevka
   ];
 
   console = {
@@ -48,6 +45,7 @@
     channel.enable = false;
     package = pkgs.lixPackageSets.latest.lix;
     settings.experimental-features = ["nix-command" "flakes"];
+    settings.trusted-users = ["root" "@wheel"];
   };
 
   zramSwap = {
