@@ -10,6 +10,7 @@
     carapace
     starship
     atuin
+    zoxide
 
     unzip
     xz
@@ -18,7 +19,7 @@
     libnotify
     wl-clipboard
     clipse
-    pass
+    age
 
     hyperfine
 
@@ -29,10 +30,7 @@
     tokei
     kondo
     fzf
-    difftastic
     delta
-
-    dipc
 
     ffmpeg
     imagemagick
@@ -43,10 +41,11 @@
 
     nh
     nix-tree
-    nix-output-monitor
 
     harper
 
     cachix
+
+    bacon
   ];
 }

@@ -3,15 +3,13 @@
 
   programs.hyprland.enable = true;
 
+  programs.firejail.enable = true;
+
   programs.xwayland.enable = true;
 
   programs.steam = {
     enable = true;
     extraCompatPackages = [pkgs.proton-ge-bin];
-  };
-
-  programs.gnupg.agent = {
-    enable = true;
   };
 
   programs.obs-studio = {

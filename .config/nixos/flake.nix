@@ -8,12 +8,13 @@
     extra-trusted-public-keys = ["nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="];
   };
 
-  outputs = {
+  outputs = inputs @ {
     self,
     nixpkgs,
     ...
-  } @ inputs: {
+  }: {
     nixosConfigurations.polaris = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
       modules = [
         ./polaris.nix
         ./hardware-configuration.nix

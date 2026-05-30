@@ -1,12 +1,12 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     chafa
-    zoxide
     ngrrram
     renderdoc
     presenterm
     resvg
     microfetch
+    fastfetch
     wiki-tui
     timer
     fwup

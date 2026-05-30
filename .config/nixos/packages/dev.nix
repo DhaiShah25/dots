@@ -1,22 +1,17 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    helix
-
     gdb
 
     git
     git-extras
     serie
     jujutsu
-    mold
-    wild
     gitui
     gh
     git-cliff
 
-    butler
-
-    bacon
+    mold
+    wild
 
     rustup
     cargo-nextest
@@ -26,20 +21,19 @@
     clang
     clang-tools
     bear
-    meson
     ninja
 
+    odin
+    zig
     nodejs
+
     pnpm
 
-    gen-license
-
     turso-cli
-
-    zls
-    zig
+    sqld
 
     # Language Servers & Formatters
+    zls
     ruff
     alejandra
     stylua
@@ -51,5 +45,6 @@
     slint-lsp
     nixd
     lua-language-server
+    svelte-language-server
   ];
 }

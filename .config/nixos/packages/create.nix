@@ -1,11 +1,18 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     inkscape
+    krita
+
+    godot
     blender
     blockbench
-    godot
+    butler
+
+    drawy
     obsidian
-    krita
-    goxel
+    logseq
+
+    neovim
+    evil-helix
   ];
 }

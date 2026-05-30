@@ -1,8 +1,6 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    prismlauncher
-    mcrcon
-    cava
+    (prismlauncher.override {jdks = [jdk25];})
     mangohud
     legcord
   ];

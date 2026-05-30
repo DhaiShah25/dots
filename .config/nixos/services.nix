@@ -6,6 +6,25 @@
 
   services.flatpak.enable = true;
 
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = ["*"];
+        settings = {
+          main = {
+            capslock = "overload(control, esc)";
+            esc = "capslock";
+          };
+          otherlayer = {};
+        };
+        extraConfig = ''
+          # put here any extra-config, e.g. you can copy/paste here directly a configuration, just remove the ids part
+        '';
+      };
+    };
+  };
+
   services.speechd.enable = true;
 
   services.displayManager.ly.enable = true;

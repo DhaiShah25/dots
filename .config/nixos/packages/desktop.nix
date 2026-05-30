@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    hyprland
     hyprlock
     hypridle
     hyprpicker
@@ -11,30 +10,21 @@
     hyprcursor
     hyprpaper
 
+    kdePackages.ocean-sound-theme
     catppuccin-cursors.frappeDark
 
     librewolf
 
-    dbus-broker
-
-    pavucontrol
-
-    rofi
+    tofi
+    cosmic-files
 
     ghostty
     foot
 
     quickshell
 
-    pcmanfm
-
     easyeffects
-
-    kdePackages.ocean-sound-theme
-
-    rnote
-
-    tofi
+    pavucontrol
 
     bitwarden-desktop
   ];
