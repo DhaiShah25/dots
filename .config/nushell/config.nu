@@ -31,6 +31,4 @@ alias "nv" = nvim
 def wo [time: string = "25m"] { timer $time; spd-say "Work Session Done!" }
 def br [time: string = "5m"] { timer $time; spd-say "Work Session Done!" }
 
-alias bell = ffplay /run/current-system/sw/share/sounds/ocean/stereo/bell.oga -nodisp -autoexit -af "volume=2.0"
-
 microfetch

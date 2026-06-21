@@ -1,10 +1,19 @@
-{pkgs, ...}: {
+{...}: {
   services.pipewire = {
     enable = true;
     pulse.enable = true;
   };
 
   services.flatpak.enable = true;
+
+  virtualisation = {
+    containers.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
 
   services.keyd = {
     enable = true;
@@ -18,9 +27,6 @@
           };
           otherlayer = {};
         };
-        extraConfig = ''
-          # put here any extra-config, e.g. you can copy/paste here directly a configuration, just remove the ids part
-        '';
       };
     };
   };
@@ -37,6 +43,8 @@
   services.udisks2.enable = true;
 
   services.tailscale.enable = true;
+
+  systemd.oomd.enable = true;
 
   services.openssh = {
     enable = true;

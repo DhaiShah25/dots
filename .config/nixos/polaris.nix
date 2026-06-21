@@ -43,16 +43,10 @@
 
   nix = {
     channel.enable = false;
-    package = pkgs.lixPackageSets.latest.lix;
+    # package = pkgs.lixPackageSets.latest.lix;
+    package = pkgs.nixVersions.latest;
     settings.experimental-features = ["nix-command" "flakes"];
     settings.trusted-users = ["root" "@wheel"];
-  };
-
-  zramSwap = {
-    enable = true;
-    priority = 25;
-    algorithm = "lz4";
-    memoryPercent = 50;
   };
 
   # Most users should NEVER change this value after the initial install, for any reason,

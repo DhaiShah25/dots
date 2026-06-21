@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   users.users.gale = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager"];
-    shell = pkgs.nushell;
+    extraGroups = ["wheel" "networkmanager" "podman"];
+    shell = pkgs.fish;
   };
 
   users.users.git = {

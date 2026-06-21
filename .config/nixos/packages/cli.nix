@@ -11,6 +11,8 @@
     eza
     gen-license
 
+    nushell
+
     yazi
   ];
 }
