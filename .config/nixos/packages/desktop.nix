@@ -26,6 +26,7 @@
     easyeffects
     pavucontrol
 
-    bitwarden-desktop
+    localsend
+    mpv
   ];
 }

@@ -8,11 +8,14 @@
     blockbench
     butler
 
+    kdePackages.kdenlive
+
     drawy
     obsidian
-    logseq
 
     neovim
     evil-helix
+
+    audacity
   ];
 }

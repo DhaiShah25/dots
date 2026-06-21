@@ -2,6 +2,8 @@
   environment.systemPackages = with pkgs; [
     gdb
 
+    devenv
+
     git
     git-extras
     serie
@@ -34,6 +36,7 @@
 
     # Language Servers & Formatters
     zls
+    ols
     ruff
     alejandra
     stylua
