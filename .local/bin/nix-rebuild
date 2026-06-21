@@ -25,6 +25,8 @@ current=$(nixos-rebuild list-generations | grep current)
 
 git add '*.nix'
 
+git commit
+
 popd
 
 notify-send -e "NixOS Rebuilt OK!" --icon=software-updater-symbolic

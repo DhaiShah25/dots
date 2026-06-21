@@ -13,7 +13,7 @@
     kdePackages.ocean-sound-theme
     catppuccin-cursors.frappeDark
 
-    librewolf
+    librewolf-bin
 
     tofi
     cosmic-files
