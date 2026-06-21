@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+set -e
+set -u
+set -o pipefail
+
+declare -A vault_map
+
+vault_map["notes"]="$HOME/vaultv2/VaultV2/07 - Encrypted"
+vault_map["vtubers"]="$HOME/Pictures/VTubers"
+vault_map["other"]="$HOME/Documents/Other"
+
+CHOICE="$(ls ~/.local/share/encdirs/ | tofi)"
+
+if [[ -z "$CHOICE" ]]; then
+    exit 1
+fi
+
+if [[ -z "${vault_map[$CHOICE]+fallback}" ]]; then
+    notify-send "Error" "No mount path mapped for vault: $CHOICE"
+    exit 1
+fi
+
+MOUNT_DIR="${vault_map[$CHOICE]}"
+mkdir -p "$MOUNT_DIR"
+
+PASS="$(tofi --require-match false --prompt-text "Password: " --height 60 </dev/null)"
+
+echo "$PASS" | gocryptfs "$HOME/.local/share/encdirs/$CHOICE" "$MOUNT_DIR" -idle 15m
+notify-send "$CHOICE was unlocked"

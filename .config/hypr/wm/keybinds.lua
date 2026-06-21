@@ -4,6 +4,8 @@ local menu = "tofi-drun"
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
+hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("unlock"))
+
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
