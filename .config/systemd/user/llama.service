@@ -1,0 +1,12 @@
+[Unit]
+Description=Llama.cpp Server
+After=network-online.target
+
+[Service]
+ExecStart=/run/current-system/sw/bin/llama-server --models-dir /home/gale/.local/share/llama-cpp/ --port 8434 --models-autoload --models-max 1 --threads 8 --numa distribute --ui
+Restart=always
+RestartSec=3
+Environment="PATH=$PATH"
+
+[Install]
+WantedBy=default.target

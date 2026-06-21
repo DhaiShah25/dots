@@ -19,7 +19,7 @@ git diff -U0 '*.nix'
 
 echo "NixOS Rebuilding..."
 
-nh os switch .
+nh os switch
 
 current=$(nixos-rebuild list-generations | grep current)
 

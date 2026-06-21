@@ -2,7 +2,7 @@
   environment.systemPackages = with pkgs; [
     tree-sitter
 
-    ollama
+    llama-cpp
     syncthing
 
     direnv
@@ -47,5 +47,11 @@
     cachix
 
     bacon
+
+    yt-dlp
+
+    ctags
+
+    gocryptfs
   ];
 }
