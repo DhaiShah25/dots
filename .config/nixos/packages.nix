@@ -1,6 +1,11 @@
 {pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   programs.hyprland.enable = true;
 
   programs.firejail.enable = true;

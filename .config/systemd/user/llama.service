@@ -3,7 +3,7 @@ Description=Llama.cpp Server
 After=network-online.target
 
 [Service]
-ExecStart=/run/current-system/sw/bin/llama-server --models-dir /home/gale/.local/share/llama-cpp/ --port 8434 --models-autoload --models-max 1 --threads 8 --numa distribute --ui
+ExecStart=/run/current-system/sw/bin/llama-server --models-dir /home/gale/.local/share/llama-cpp/ --port 8434 --models-autoload --models-max 1 --threads 8 --numa distribute --ui --host 0.0.0.0
 Restart=always
 RestartSec=3
 Environment="PATH=$PATH"
