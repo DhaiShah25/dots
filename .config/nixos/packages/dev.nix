@@ -26,7 +26,6 @@
     ninja
 
     odin
-    zig
     nodejs
 
     pnpm
@@ -35,7 +34,6 @@
     sqld
 
     # Language Servers & Formatters
-    zls
     ols
     ruff
     alejandra

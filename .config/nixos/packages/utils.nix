@@ -53,5 +53,7 @@
     ctags
 
     gocryptfs
+
+    libwebp
   ];
 }

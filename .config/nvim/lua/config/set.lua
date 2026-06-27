@@ -49,7 +49,7 @@ vim.o.foldmethod = "expr"
 vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 10
 
-vim.o.shell = "nu"
+vim.o.shell = "fish"
 
 -- Get the window id for a buffer
 -- @param bufnr integer

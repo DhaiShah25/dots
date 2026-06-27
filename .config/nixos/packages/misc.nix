@@ -11,7 +11,5 @@
     timer
     fwup
     jq
-
-    podman-compose
   ];
 }

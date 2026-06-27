@@ -13,10 +13,10 @@
     kdePackages.ocean-sound-theme
     catppuccin-cursors.frappeDark
 
-    librewolf-bin
+    librewolf
 
     tofi
-    cosmic-files
+    nautilus
 
     ghostty
     foot
@@ -28,5 +28,7 @@
 
     localsend
     mpv
+
+    helium
   ];
 }

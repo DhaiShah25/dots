@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    (prismlauncher.override {jdks = [jdk25];})
-    mangohud
-    legcord
+  environment.systemPackages = [
+    (pkgs.prismlauncher.override {jdks = [pkgs.jdk25];})
+    pkgs.mangohud
+    pkgs.legcord
   ];
 }

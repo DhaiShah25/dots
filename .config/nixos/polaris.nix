@@ -10,11 +10,6 @@
   hardware.opentabletdriver.enable = true;
   hardware.uinput.enable = true;
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "librewolf-bin-151.0.1-2"
-    "librewolf-bin-unwrapped-151.0.1-2"
-  ];
-
   environment.sessionVariables = {
     NH_FLAKE = "/home/gale/dots/.config/nixos/";
   };

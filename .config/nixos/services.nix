@@ -4,17 +4,6 @@
     pulse.enable = true;
   };
 
-  services.flatpak.enable = true;
-
-  virtualisation = {
-    containers.enable = true;
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
-    };
-  };
-
   services.keyd = {
     enable = true;
     keyboards = {
