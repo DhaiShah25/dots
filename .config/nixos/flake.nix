@@ -23,6 +23,10 @@
       modules = [
         {
           nixpkgs.overlays = [helium-browser.overlays.default];
+          # What Even Is Importing This?
+          nixpkgs.config.permittedInsecurePackages = [
+            "pnpm-10.29.2"
+          ];
         }
         ./polaris.nix
         ./hardware-configuration.nix
