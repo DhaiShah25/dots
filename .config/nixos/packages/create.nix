@@ -14,7 +14,7 @@
     obsidian
 
     neovim
-    evil-helix
+    helix
 
     audacity
   ];

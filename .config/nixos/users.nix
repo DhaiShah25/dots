@@ -17,4 +17,11 @@
   };
 
   users.groups.git = {};
+
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = ["footclient.desktop"];
+    };
+  };
 }
