@@ -2,13 +2,12 @@
   environment.systemPackages = with pkgs; [
     hyprlock
     hypridle
-    hyprpicker
     hyprpolkitagent
-    xdg-desktop-portal-hyprland
-    hyprland-qt-support
     hyprsunset
     hyprcursor
     hyprpaper
+
+    wlr-which-key
 
     kdePackages.ocean-sound-theme
     catppuccin-cursors.frappeDark
@@ -25,9 +24,6 @@
 
     easyeffects
     pavucontrol
-
-    localsend
-    mpv
 
     helium
   ];

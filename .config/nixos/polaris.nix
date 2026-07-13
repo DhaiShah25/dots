@@ -4,9 +4,6 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  hardware.bluetooth.enable = false;
-  hardware.bluetooth.powerOnBoot = false;
-
   hardware.opentabletdriver.enable = true;
   hardware.uinput.enable = true;
 
@@ -15,14 +12,13 @@
   };
 
   documentation = {
-    enable = false;
+    enable = true;
     doc.enable = false;
-    man.enable = false;
+    man.enable = true;
     info.enable = false;
   };
 
   fonts.packages = with pkgs; [
-    nerd-fonts.monaspace
     nerd-fonts.iosevka
   ];
 
@@ -50,7 +46,6 @@
 
   nix = {
     channel.enable = false;
-    # package = pkgs.lixPackageSets.latest.lix;
     package = pkgs.nixVersions.latest;
     settings.experimental-features = ["nix-command" "flakes"];
     settings.trusted-users = ["root" "@wheel"];

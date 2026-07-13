@@ -20,8 +20,6 @@
     };
   };
 
-  services.speechd.enable = true;
-
   services.displayManager.ly.enable = true;
 
   systemd.services.NetworkManager-wait-online.enable = false;
@@ -41,7 +39,7 @@
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
       PermitRootLogin = "no";
-      AllowUsers = ["git" "gale"];
+      AllowUsers = ["git"];
     };
   };
 }

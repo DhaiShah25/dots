@@ -19,13 +19,11 @@
     libnotify
     wl-clipboard
     clipse
-    age
 
     hyperfine
 
     grimblast
     wf-recorder
-    wl-screenrec
 
     tokei
     kondo
@@ -46,11 +44,7 @@
 
     cachix
 
-    bacon
-
     yt-dlp
-
-    ctags
 
     gocryptfs
 

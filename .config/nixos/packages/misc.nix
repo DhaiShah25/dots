@@ -11,5 +11,6 @@
     timer
     fwup
     jq
+    slurp
   ];
 }

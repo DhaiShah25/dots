@@ -2,8 +2,6 @@
   environment.systemPackages = with pkgs; [
     gdb
 
-    devenv
-
     git
     git-extras
     serie
@@ -19,15 +17,14 @@
     cargo-nextest
     cargo-audit
 
-    cmake
     clang
     clang-tools
     bear
     ninja
 
+    zig
     odin
     nodejs
-
     pnpm
 
     turso-cli

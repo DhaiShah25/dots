@@ -18,9 +18,6 @@
     # Tinyproxy
     8888
 
-    # AI
-    8100
-
     # Steam Link
     27036
     27037

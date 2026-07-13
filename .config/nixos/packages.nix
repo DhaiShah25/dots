@@ -1,13 +1,12 @@
 {pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
 
-  programs.hyprland.enable = true;
-
-  programs.firejail.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   programs.fish.enable = true;
-
-  programs.xwayland.enable = true;
 
   programs.steam = {
     enable = true;
