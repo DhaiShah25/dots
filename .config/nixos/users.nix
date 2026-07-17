@@ -1,7 +1,10 @@
 {pkgs, ...}: {
   users.users.gale = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager"];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ];
     shell = pkgs.fish;
   };
 

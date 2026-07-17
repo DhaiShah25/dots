@@ -7,7 +7,6 @@
     resvg
     microfetch
     fastfetch
-    wiki-tui
     timer
     fwup
     jq

@@ -25,6 +25,6 @@
     easyeffects
     pavucontrol
 
-    helium
+    ungoogled-chromium
   ];
 }

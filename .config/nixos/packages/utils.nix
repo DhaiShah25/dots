@@ -1,12 +1,8 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    tree-sitter
-
     llama-cpp
     syncthing
 
-    direnv
-    nix-direnv
     carapace
     starship
     atuin
@@ -26,7 +22,6 @@
     wf-recorder
 
     tokei
-    kondo
     fzf
     delta
 
@@ -43,8 +38,6 @@
     harper
 
     cachix
-
-    yt-dlp
 
     gocryptfs
 

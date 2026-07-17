@@ -26,8 +26,16 @@
   programs.git = {
     enable = true;
     config = {
-      init = {defaultBranch = "main";};
+      init = {
+        defaultBranch = "main";
+      };
     };
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    enableFishIntegration = true;
   };
 
   programs.nano.enable = false;

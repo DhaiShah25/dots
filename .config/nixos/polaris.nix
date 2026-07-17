@@ -46,9 +46,15 @@
 
   nix = {
     channel.enable = false;
-    package = pkgs.nixVersions.latest;
-    settings.experimental-features = ["nix-command" "flakes"];
-    settings.trusted-users = ["root" "@wheel"];
+    package = pkgs.lixPackageSets.latest.lix;
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    settings.trusted-users = [
+      "root"
+      "@wheel"
+    ];
   };
 
   # Most users should NEVER change this value after the initial install, for any reason,

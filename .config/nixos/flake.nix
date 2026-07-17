@@ -2,19 +2,22 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    helium-browser.url = "github:schembriaiden/helium-browser-nix-flake";
-    helium-browser.inputs.nixpkgs.follows = "nixpkgs";
+    helium = {
+      url = "github:schembriaiden/helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
     extra-substituters = ["https://nix-community.cachix.org"];
-    extra-trusted-public-keys = ["nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
   };
 
   outputs = {
-    self,
     nixpkgs,
-    helium-browser,
+    helium,
     ...
   } @ inputs: {
     nixosConfigurations.polaris = nixpkgs.lib.nixosSystem {
@@ -22,10 +25,8 @@
       specialArgs = {inherit inputs;};
       modules = [
         {
-          nixpkgs.overlays = [helium-browser.overlays.default];
-          # What Even Is Importing This?
-          nixpkgs.config.permittedInsecurePackages = [
-            "pnpm-10.29.2"
+          environment.systemPackages = [
+            helium.packages."x86_64-linux".default
           ];
         }
         ./polaris.nix
@@ -34,13 +35,7 @@
         ./users.nix
         ./packages.nix
         ./networking.nix
-        ./packages/cli.nix
-        ./packages/create.nix
-        ./packages/desktop.nix
-        ./packages/dev.nix
-        ./packages/misc.nix
-        ./packages/utils.nix
-        ./packages/fun.nix
+        ./packages
       ];
     };
   };
