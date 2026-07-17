@@ -6,7 +6,7 @@ for w = 4, 7 do
 	hl.workspace_rule({ workspace = tostring(w), monitor = "HDMI-A-1" })
 end
 
-hl.workspace_rule({ workspace = "8", on_created_empty = "obsidian", monitor = "eDP-1", default_name = "󰈙" })
+hl.workspace_rule({ workspace = "8", monitor = "eDP-1", default_name = "󰈙" })
 for w = 9, 10 do
 	hl.workspace_rule({ workspace = tostring(w), monitor = "eDP-1" })
 end

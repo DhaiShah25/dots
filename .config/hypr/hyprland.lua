@@ -5,7 +5,7 @@ require("wm.window_rules")
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("clipse -listen")
-	hl.exec_cmd("hyprsunset & hypridle & foot -s & hyprpaper & quickshell")
+	hl.exec_cmd("hyprsunset & hypridle & hyprpaper")
 end)
 
 -------------------------------

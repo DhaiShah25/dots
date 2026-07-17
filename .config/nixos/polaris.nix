@@ -12,9 +12,9 @@
   };
 
   documentation = {
-    enable = true;
+    enable = false;
     doc.enable = false;
-    man.enable = true;
+    man.enable = false;
     info.enable = false;
   };
 

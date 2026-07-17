@@ -1,5 +1,7 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
+    neovim
+
     git
     git-extras
     serie

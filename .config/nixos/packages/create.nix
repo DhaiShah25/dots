@@ -13,10 +13,6 @@
     drawy
     obsidian
 
-    neovim
-    neovide
-    evil-helix
-
     audacity
   ];
 }
