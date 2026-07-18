@@ -8,7 +8,7 @@
   hardware.uinput.enable = true;
 
   environment.sessionVariables = {
-    NH_FLAKE = "/home/gale/dots/.config/nixos/";
+    NH_FLAKE = "/home/gale/dots/?dir=.config/nixos";
   };
 
   documentation = {
