@@ -26,7 +26,6 @@ return {
 		"gitcommit",
 		"html",
 		"markdown",
-		"typescriptreact",
 		"typst",
 	},
 	root_markers = { ".harper-dictionary.txt", ".git" },

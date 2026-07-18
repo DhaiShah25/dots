@@ -40,4 +40,6 @@
   };
 
   programs.nano.enable = false;
+
+  programs.firejail.enable = true;
 }

@@ -10,6 +10,7 @@ hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("unlock"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("grimblast copy area -n"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("grimblast copysave area -n"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(
 	mainMod .. " + M",
