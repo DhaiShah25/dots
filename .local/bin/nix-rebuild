@@ -4,7 +4,8 @@ set -e
 
 pushd ~/.config/nixos/
 
-nvim $(fd -e nix | fzf)
+file=$(fd -e nix | fzf)
+nvim "${file:-.}"
 
 if git diff --quiet '*.nix'; then
     echo "No changes detected, exiting."
@@ -21,11 +22,23 @@ echo "NixOS Rebuilding..."
 
 nh os switch
 
-current=$(nixos-rebuild list-generations | grep current)
+current=$(nh os info | grep current | cut -d' ' -f1)
+
+read -r -p "Enter commit message (Leave blank for Default [Nix Generation: $current]): " user_msg
+
+if [ -z "$user_msg" ]; then
+    commit_msg="Nix Generation: $current"
+else
+    commit_msg="$user_msg"
+fi
 
 git add '*.nix'
 
-git commit -m "$current"
+if git diff --cached --quiet; then
+    echo "No .nix files were modified to commit."
+else
+    git commit -m "$commit_msg"
+fi
 
 popd
 
