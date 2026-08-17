@@ -1,4 +1,4 @@
-vim.o.swapfile = false
+vim.o.swapfile = true
 vim.o.undofile = true
 
 vim.o.scrolloff = 8
@@ -59,3 +59,5 @@ vim.diagnostic.config({
 		current_line = true,
 	},
 })
+
+vim.opt.completeopt = "menuone,noselect,fuzzy,nosort"

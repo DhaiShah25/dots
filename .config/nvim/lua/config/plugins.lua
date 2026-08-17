@@ -8,12 +8,20 @@ for name, _ in vim.fs.dir(path) do
 	end
 end
 
-vim.pack.add(vim.tbl_map(function(plugin)
-	return plugin[1]:gsub("^gh:", "https://github.com/")
-end, plugins))
+plugins = vim.tbl_map(function(plugin)
+	plugin.src = plugin[1]:gsub("^gh:", "https://github.com/")
+	plugin[1] = nil
+	return plugin
+end, plugins)
+vim.pack.add(plugins)
 
 for _, p in ipairs(plugins) do
-	_ = p.setup and p.setup()
+	if p.data and p.data.setup then
+		local status, err = pcall(p.data.setup)
+		if not status then
+			vim.notify("Failed to run setup: " .. tostring(err), vim.log.levels.ERROR)
+		end
+	end
 end
 
 vim.api.nvim_create_autocmd("PackChanged", {
@@ -24,8 +32,6 @@ vim.api.nvim_create_autocmd("PackChanged", {
 
 		if name == "nvim-treesitter" and kind == "update" then
 			vim.cmd("TSUpdate")
-		elseif name == "blink.cmp" and (kind == "install" or kind == "update") then
-			require("blink.cmp").build():wait(60000)
 		end
 	end,
 })

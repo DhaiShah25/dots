@@ -1,8 +1,10 @@
 return {
 	"gh:stevearc/oil.nvim",
-	setup = function()
-		require("oil").setup({ view_options = {
-			show_hidden = true,
-		} })
-	end,
+	data = {
+		setup = function()
+			require("oil").setup({ view_options = {
+				show_hidden = true,
+			} })
+		end,
+	},
 }
