@@ -1,0 +1,14 @@
+[Unit]
+After=graphical-session.target
+BindsTo=graphical-session.target
+Description=Autostart Hyprpaper
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/run/current-system/sw/bin/hyprpaper
+Restart=on-failure
+RestartSec=2s
+Type=simple
+
+[Install]
+WantedBy=graphical-session.target
