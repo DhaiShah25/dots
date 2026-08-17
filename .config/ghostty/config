@@ -1,8 +1,8 @@
 window-padding-x = 5
-background-opacity = 0.9
-background-blur = true
+# background-opacity = 0.9
+# background-blur = true
 
-theme = Nord
+theme = evergarden-fall-blue
 
 font-size = 15
 
