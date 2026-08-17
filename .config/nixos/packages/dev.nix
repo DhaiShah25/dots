@@ -1,10 +1,13 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
+    tree-sitter
+
     neovim
     helix
     neovide
 
     git
+    mercurial
     git-extras
     serie
     jujutsu
