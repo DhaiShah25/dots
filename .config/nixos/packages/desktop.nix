@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    hyprlock
     hypridle
     hyprpolkitagent
     hyprsunset
@@ -11,8 +10,6 @@
 
     kdePackages.ocean-sound-theme
     catppuccin-cursors.frappeDark
-
-    librewolf
 
     tofi
     nautilus

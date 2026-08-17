@@ -7,6 +7,8 @@
     withUWSM = true;
   };
 
+  programs.hyprlock.enable = true;
+
   programs.fish.enable = true;
 
   programs.steam = {
@@ -37,9 +39,14 @@
     enable = true;
     nix-direnv.enable = true;
     enableFishIntegration = true;
+    silent = true;
   };
 
   programs.nano.enable = false;
+
+  programs.firefox.enable = true;
+
+  programs.foot.enable = true;
 
   programs.firejail.enable = true;
 }

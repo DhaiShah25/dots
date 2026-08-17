@@ -3,9 +3,7 @@
     inkscape
     krita
 
-    godot
     blender
-    blockbench
     butler
 
     kdePackages.kdenlive

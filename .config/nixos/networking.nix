@@ -1,4 +1,4 @@
-{...}: {
+{
   networking.hostName = "polaris";
 
   time.timeZone = "America/New_York";

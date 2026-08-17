@@ -4,11 +4,20 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  imports = [
+    ./hardware-configuration.nix
+    ./services.nix
+    ./users.nix
+    ./packages.nix
+    ./networking.nix
+    ./packages
+  ];
+
   hardware.opentabletdriver.enable = true;
   hardware.uinput.enable = true;
 
   environment.sessionVariables = {
-    NH_FLAKE = "/home/gale/dots/?dir=.config/nixos";
+    NH_FLAKE = "git+file:///home/gale/dots?dir=.config/nixos";
   };
 
   documentation = {
@@ -18,8 +27,8 @@
     info.enable = false;
   };
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.iosevka
+  fonts.packages = [
+    pkgs.nerd-fonts.iosevka
   ];
 
   console = {

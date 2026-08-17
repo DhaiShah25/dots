@@ -5,7 +5,7 @@ require("wm.window_rules")
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("clipse -listen")
-	hl.exec_cmd("hyprsunset & hypridle & hyprpaper")
+	hl.exec_cmd("hyprsunset")
 end)
 
 -------------------------------
@@ -54,7 +54,7 @@ hl.config({
 hl.config({
 	input = {
 		kb_layout = "us",
-		kb_variant = "basic,colemak",
+		kb_variant = "basic",
 		kb_options = "compose:ralt,grp:win_space_toggle",
 
 		follow_mouse = 1,

@@ -33,3 +33,14 @@ hl.window_rule({
 
 	focus_on_activate = true,
 })
+
+hl.window_rule({
+	name = "obsidian",
+	match = {
+		class = "md\\.Obsidian",
+		title = "Settings.*",
+	},
+
+	focus_on_activate = true,
+	float = true,
+})

@@ -14,5 +14,6 @@
     nushell
 
     yazi
+    brightnessctl
   ];
 }

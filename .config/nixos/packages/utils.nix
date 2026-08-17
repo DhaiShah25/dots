@@ -13,13 +13,13 @@
     gzip
     stow
     libnotify
+    fyi
     wl-clipboard
     clipse
 
     hyperfine
 
     grimblast
-    wf-recorder
 
     tokei
     fzf
